@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammed Hasan | Learn • Explore • Improve</title>
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -423,7 +425,7 @@
                     <p>هنا أشارك مقالاتي، مصادر الدراسة، الكورسات، والروابط المفيدة التي تساعدك على التعلم والتطوير.</p>
                 </div>
                 <div>
-                    <button class="btn-primary">Explore Now <i class="fa-solid fa-arrow-left"></i></button>
+                    <a href="/admin/" class="btn-primary">لوحة التحكم <i class="fa-solid fa-arrow-left"></i></a>
                 </div>
             </div>
         </section>
@@ -557,6 +559,17 @@
 
     </div>
 
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 </body>
 </html>
-<script src="[https://identity.netlify.com/v1/netlify-identity-widget.js](https://identity.netlify.com/v1/netlify-identity-widget.js)"></script>
+
