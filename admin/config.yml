@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main # أو master حسب اسم الفرع الرئيسي عندك
+  branch: main
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
@@ -19,6 +19,21 @@ collections:
       - { label: "صورة المقال", name: "image", widget: "image", required: false }
       - { label: "المحتوى", name: "body", widget: "markdown" }
 
+  # قسم البحوث
+  - name: "researches"
+    label: "البحوث (Researches)"
+    folder: "content/researches"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "عنوان البحث بالعربية", name: "title_ar", widget: "string" }
+      - { label: "Research Title in English", name: "title_en", widget: "string" }
+      - { label: "اسم الباحث / الكاتب", name: "author", widget: "string" }
+      - { label: "تاريخ النشر / السنة", name: "date", widget: "datetime" }
+      - { label: "ملخص البحث (Abstract)", name: "description", widget: "string" }
+      - { label: "رابط ملف البحث (PDF / External Link)", name: "link", widget: "string", required: false }
+      - { label: "تفاصيل / نص البحث", name: "body", widget: "markdown", required: false }
+
   # قسم مصادر الدراسة
   - name: "resources"
     label: "مصادر الدراسة (Resources)"
@@ -29,7 +44,7 @@ collections:
       - { label: "اسم المصدر", name: "title", widget: "string" }
       - { label: "وصف قصير / اسم المؤلف", name: "description", widget: "string" }
       - { label: "رابط التحميل أو المعاينة", name: "link", widget: "string" }
-      - { label: "نوع المصدر (PDF, Web, File)", name: "type", widget: "select", options: ["PDF", "Website", "Drive", "Other"] }
+      - { label: "نوع المصدر", name: "type", widget: "select", options: ["PDF", "Website", "Drive", "Other"] }
 
   # قسم الكورسات
   - name: "courses"
@@ -42,7 +57,6 @@ collections:
       - { label: "جهة تقديم الكورس / التقييم", name: "provider", widget: "string" }
       - { label: "صورة الكورس", name: "image", widget: "image", required: false }
       - { label: "رابط بدء الكورس", name: "link", widget: "string" }
-      - { label: "وصف الكورس", name: "body", widget: "markdown", required: false }
 
   # قسم الروابط المفيدة
   - name: "links"
@@ -54,4 +68,3 @@ collections:
       - { label: "اسم الموقع / الرابط", name: "title", widget: "string" }
       - { label: "وصف موجز", name: "description", widget: "string" }
       - { label: "الرابط (URL)", name: "url", widget: "string" }
-      - { label: "الفئة", name: "category", widget: "select", options: ["General", "English Studies", "Tools", "Books"] }
