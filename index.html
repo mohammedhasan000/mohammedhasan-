@@ -3,47 +3,560 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Hasan - Learn Explore Improve</title>
-    <!-- هنا يمكنك إضافة رابط ملف CSS القديم الخاص بك إذا كان موجوداً، أو لصق الـ CSS الكامل هنا -->
+    <title>Mohammed Hasan | Learn • Explore • Improve</title>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* سأضع لك التصميم الأساسي المشابه لصورتك هنا. للحصول على الدقة 100%، يرجى لصق الـ CSS القديم الخاص بك */
-        body { margin: 0; background-color: #010409; color: white; font-family: sans-serif; }
-        .hero { background: url('https://mohammedhasan0.netlify.app/img/hero-bg.jpg') no-repeat center/cover; padding: 100px 20px; text-align: center; position: relative; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
-        .hero-content { position: relative; z-index: 1; }
-        .hero h1 { font-size: 3rem; color: #38bdf8; margin: 0; }
-        .hero p { font-size: 1.2rem; color: #94a3b8; }
-        /* ... باقي تصميم صفحتك الفخم (الأزرار، البطاقات، المجلدات، المقالات)... */
-        /* يرجى التأكد من استبدال هذا الجزء بكود الـ CSS القديم الخاص بك للحصول على الشكل النهائي المطابق للصورة */
+        :root {
+            --bg-dark: #070a13;
+            --card-bg: rgba(18, 26, 43, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-blue: #2563eb;
+            --accent-glow: #3b82f6;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
+            background-attachment: fixed;
+            padding-bottom: 40px;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* HEADER / NAVBAR */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: rgba(10, 15, 29, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            color: var(--text-muted);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #60a5fa;
+        }
+
+        .nav-link i { font-size: 14px; }
+        .nav-link span { font-size: 11px; opacity: 0.8; }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .icon-btn:hover { background: rgba(255,255,255,0.15); }
+
+        .lang-btn {
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.05);
+            cursor: pointer;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .hero-main {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-main::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #ffffff, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-tags {
+            font-size: 20px;
+            color: #60a5fa;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .hero-quote {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 14px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            width: 80%;
+        }
+
+        .hero-side {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hero-side h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-side p {
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
+        }
+
+        /* MAIN CATEGORIES GRID */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .cat-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .cat-blue { background: rgba(37, 99, 235, 0.2); color: #60a5fa; }
+        .cat-green { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+        .cat-purple { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
+        .cat-gold { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+        .cat-teal { background: rgba(20, 184, 166, 0.2); color: #2dd4bf; }
+
+        .cat-info h4 { font-size: 15px; margin-bottom: 3px; }
+        .cat-info p { font-size: 11px; color: var(--text-muted); }
+
+        /* CONTENT SECTIONS GRID */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .section-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header h3 { font-size: 16px; font-weight: 700; }
+        .view-all { font-size: 12px; color: var(--text-muted); border: 1px solid var(--border-color); padding: 4px 10px; border-radius: 6px; }
+
+        /* ITEM CARDS */
+        .item-list { display: flex; flex-direction: column; gap: 15px; }
+
+        .item-card {
+            display: flex;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px;
+            transition: 0.3s;
+        }
+
+        .item-card:hover { border-color: rgba(255,255,255,0.2); }
+
+        .item-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .item-details h4 { font-size: 13px; margin-bottom: 5px; line-height: 1.4; }
+        .item-details p { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
+        .item-meta { font-size: 10px; color: var(--text-muted); display: flex; gap: 10px; }
+
+        /* FOOTER */
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .social-links { display: flex; gap: 12px; }
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            transition: 0.3s;
+        }
+
+        .social-icon:hover { background: var(--accent-blue); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; }
+            nav { display: none; }
+            .hero-title { font-size: 32px; }
+        }
     </style>
-    <!-- هذا هو السطر البرمجي الوحيد الضروري لربط لوحة التحكم -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-    <!-- هذا هو كود الـ HTML الخاص بصفحتك القديمة والكاملة (كما في image_14.png) -->
-    <!-- يرجى لصق كود الـ HTML القديم الكامل هنا للحصول على جميع الأقسام (Header, Hero, Cards, Footer) -->
-    
-    <div class="hero">
-        <div class="hero-content">
-            <h1>Mohammed Hasan</h1>
-            <p>تعلم . استكشف . طوّر</p>
-            <p>"Knowledge is the only thing that grows when you share it."</p>
-        </div>
-    </div>
-    
-    <!-- باقي أقسام الموقع (Articles, Resources, Courses)... -->
 
-    <!-- هذا السطر البرمجي ضروري للتعرف على لوحة التحكم عند الدخول إليها -->
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">MH</div>
+            <div class="logo-text">Mohammed Hasan</div>
+        </div>
+
+        <nav>
+            <a href="#" class="nav-link active"><i class="fa-solid fa-house"></i>الرئيسية <span>Home</span></a>
+            <a href="#" class="nav-link"><i class="fa-solid fa-newspaper"></i>المقالات <span>Articles</span></a>
+            <a href="#" class="nav-link"><i class="fa-solid fa-book-open"></i>مصادر الدراسة <span>Resources</span></a>
+            <a href="#" class="nav-link"><i class="fa-solid fa-graduation-cap"></i>الكورسات <span>Courses</span></a>
+            <a href="#" class="nav-link"><i class="fa-solid fa-link"></i>روابط مفيدة <span>Links</span></a>
+            <a href="#" class="nav-link"><i class="fa-solid fa-user"></i>عني <span>About</span></a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="icon-btn"><i class="fa-solid fa-moon"></i></button>
+            <span class="lang-btn">AR | EN</span>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-main">
+                <div class="hero-subtitle">Welcome to my space</div>
+                <h1 class="hero-title">Mohammed Hasan</h1>
+                <div class="hero-tags">تعلم . استكشف . طور</div>
+                <p class="hero-quote">"Knowledge is the only thing that grows when you share it."</p>
+            </div>
+
+            <div class="hero-side">
+                <div>
+                    <h3>مرحباً بك في موقعي 👋</h3>
+                    <p>هنا أشارك مقالاتي، مصادر الدراسة، الكورسات، والروابط المفيدة التي تساعدك على التعلم والتطوير.</p>
+                </div>
+                <div>
+                    <button class="btn-primary">Explore Now <i class="fa-solid fa-arrow-left"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORIES GRID -->
+        <section class="categories-grid">
+            <div class="category-card">
+                <div class="cat-icon cat-blue"><i class="fa-solid fa-file-lines"></i></div>
+                <div class="cat-info">
+                    <h4>المقالات</h4>
+                    <p>Articles</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="cat-icon cat-green"><i class="fa-solid fa-folder-open"></i></div>
+                <div class="cat-info">
+                    <h4>مصادر الدراسة</h4>
+                    <p>Study Resources</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="cat-icon cat-purple"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="cat-info">
+                    <h4>الكورسات</h4>
+                    <p>Courses</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="cat-icon cat-gold"><i class="fa-solid fa-link"></i></div>
+                <div class="cat-info">
+                    <h4>روابط مفيدة</h4>
+                    <p>Useful Links</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="cat-icon cat-teal"><i class="fa-solid fa-user"></i></div>
+                <div class="cat-info">
+                    <h4>عني</h4>
+                    <p>About Me</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENT SECTIONS -->
+        <div class="content-grid">
+
+            <!-- LATEST ARTICLES -->
+            <div class="section-box">
+                <div class="section-header">
+                    <h3>آخر المقالات | Latest Articles</h3>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="item-list">
+                    <div class="item-card">
+                        <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=200" class="item-img" alt="book">
+                        <div class="item-details">
+                            <h4>قوة القراءة في تشكيل عقلك</h4>
+                            <p>The Power of Reading in Shaping Your Mind</p>
+                            <div class="item-meta"><span><i class="fa-regular fa-clock"></i> 25 Aug 2025</span></div>
+                        </div>
+                    </div>
+                    <div class="item-card">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=200" class="item-img" alt="stars">
+                        <div class="item-details">
+                            <h4>كيف تحافظ على حماسك كطالب</h4>
+                            <p>How to Stay Motivated as a Student</p>
+                            <div class="item-meta"><span><i class="fa-regular fa-clock"></i> 18 Aug 2025</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURED RESOURCES -->
+            <div class="section-box">
+                <div class="section-header">
+                    <h3>موارد مميزة | Featured Resources</h3>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="item-list">
+                    <div class="item-card">
+                        <div class="item-details">
+                            <h4>English Grammar in Use (PDF)</h4>
+                            <p>Raymond Murphy</p>
+                            <button class="btn-primary" style="padding: 4px 12px; font-size: 11px;">Download</button>
+                        </div>
+                    </div>
+                    <div class="item-card">
+                        <div class="item-details">
+                            <h4>British Council - Free Resources</h4>
+                            <p>Official Website</p>
+                            <button class="btn-primary" style="padding: 4px 12px; font-size: 11px;">Visit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RECOMMENDED COURSES -->
+            <div class="section-box">
+                <div class="section-header">
+                    <h3>كورسات مقترحة | Recommended Courses</h3>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="item-list">
+                    <div class="item-card">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=200" class="item-img" alt="laptop">
+                        <div class="item-details">
+                            <h4>English for Academic Purposes</h4>
+                            <p>British Council ⭐ 4.8</p>
+                            <button class="btn-primary" style="padding: 4px 12px; font-size: 11px;">Start</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+            </div>
+
+            <div>© 2026 Mohammed Hasan. All rights reserved.</div>
+
+            <a href="#" class="view-all"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+        </footer>
+
+    </div>
+
 </body>
 </html>
+<script src="[https://identity.netlify.com/v1/netlify-identity-widget.js](https://identity.netlify.com/v1/netlify-identity-widget.js)"></script>
