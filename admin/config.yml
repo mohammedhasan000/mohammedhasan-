@@ -1,18 +1,57 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main # أو master حسب اسم الفرع الرئيسي عندك
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
 
 collections:
-  - name: "blog"
-    label: "المقالات"
-    folder: "posts"
+  # قسم المقالات
+  - name: "articles"
+    label: "المقالات (Articles)"
+    folder: "content/articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "العنوان بالعربية", name: "title_ar", widget: "string" }
+      - { label: "Title in English", name: "title_en", widget: "string" }
+      - { label: "تاريخ النشر", name: "date", widget: "datetime" }
+      - { label: "صورة المقال", name: "image", widget: "image", required: false }
+      - { label: "المحتوى", name: "body", widget: "markdown" }
+
+  # قسم مصادر الدراسة
+  - name: "resources"
+    label: "مصادر الدراسة (Resources)"
+    folder: "content/resources"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "العنوان", name: "title", widget: "string" }
-      - { label: "التاريخ", name: "date", widget: "datetime" }
-      - { label: "صورة الغلاف", name: "image", widget: "image", required: false }
-      - { label: "محتوى المقال", name: "body", widget: "markdown" }
+      - { label: "اسم المصدر", name: "title", widget: "string" }
+      - { label: "وصف قصير / اسم المؤلف", name: "description", widget: "string" }
+      - { label: "رابط التحميل أو المعاينة", name: "link", widget: "string" }
+      - { label: "نوع المصدر (PDF, Web, File)", name: "type", widget: "select", options: ["PDF", "Website", "Drive", "Other"] }
+
+  # قسم الكورسات
+  - name: "courses"
+    label: "الكورسات (Courses)"
+    folder: "content/courses"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "عنوان الكورس", name: "title", widget: "string" }
+      - { label: "جهة تقديم الكورس / التقييم", name: "provider", widget: "string" }
+      - { label: "صورة الكورس", name: "image", widget: "image", required: false }
+      - { label: "رابط بدء الكورس", name: "link", widget: "string" }
+      - { label: "وصف الكورس", name: "body", widget: "markdown", required: false }
+
+  # قسم الروابط المفيدة
+  - name: "links"
+    label: "روابط مفيدة (Links)"
+    folder: "content/links"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "اسم الموقع / الرابط", name: "title", widget: "string" }
+      - { label: "وصف موجز", name: "description", widget: "string" }
+      - { label: "الرابط (URL)", name: "url", widget: "string" }
+      - { label: "الفئة", name: "category", widget: "select", options: ["General", "English Studies", "Tools", "Books"] }
