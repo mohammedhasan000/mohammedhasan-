@@ -3,64 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي الشخصي</title>
+    <title>Mohammed Hasan - Learn Explore Improve</title>
+    <!-- هنا يمكنك إضافة رابط ملف CSS القديم الخاص بك إذا كان موجوداً، أو لصق الـ CSS الكامل هنا -->
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        .container {
-            text-align: center;
-            padding: 2.5rem;
-            background: #1e293b;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-            border: 1px solid #334155;
-            max-width: 500px;
-            width: 85%;
-        }
-        h1 {
-            color: #38bdf8;
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-        p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        .admin-link {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 12px 24px;
-            background-color: #0284c7;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .admin-link:hover {
-            background-color: #0369a1;
-        }
+        /* سأضع لك التصميم الأساسي المشابه لصورتك هنا. للحصول على الدقة 100%، يرجى لصق الـ CSS القديم الخاص بك */
+        body { margin: 0; background-color: #010409; color: white; font-family: sans-serif; }
+        .hero { background: url('https://mohammedhasan0.netlify.app/img/hero-bg.jpg') no-repeat center/cover; padding: 100px 20px; text-align: center; position: relative; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 { font-size: 3rem; color: #38bdf8; margin: 0; }
+        .hero p { font-size: 1.2rem; color: #94a3b8; }
+        /* ... باقي تصميم صفحتك الفخم (الأزرار، البطاقات، المجلدات، المقالات)... */
+        /* يرجى التأكد من استبدال هذا الجزء بكود الـ CSS القديم الخاص بك للحصول على الشكل النهائي المطابق للصورة */
     </style>
+    <!-- هذا هو السطر البرمجي الوحيد الضروري لربط لوحة التحكم -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>أهلاً بك في موقعي!</h1>
-        <p>مرحباً بك في مساحتي الخاصة. يمكنك متابعة أحدث المقالات والتدوينات هنا.</p>
-        <a href="/admin/" class="admin-link">لوحة التحكم</a>
+    <!-- هذا هو كود الـ HTML الخاص بصفحتك القديمة والكاملة (كما في image_14.png) -->
+    <!-- يرجى لصق كود الـ HTML القديم الكامل هنا للحصول على جميع الأقسام (Header, Hero, Cards, Footer) -->
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Mohammed Hasan</h1>
+            <p>تعلم . استكشف . طوّر</p>
+            <p>"Knowledge is the only thing that grows when you share it."</p>
+        </div>
     </div>
+    
+    <!-- باقي أقسام الموقع (Articles, Resources, Courses)... -->
 
+    <!-- هذا السطر البرمجي ضروري للتعرف على لوحة التحكم عند الدخول إليها -->
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
