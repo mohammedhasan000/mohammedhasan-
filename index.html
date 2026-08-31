@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+here<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -251,7 +251,7 @@
         /* MAIN CATEGORIES GRID */
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 15px;
             margin-bottom: 40px;
         }
@@ -285,6 +285,7 @@
         }
 
         .cat-blue { background: rgba(37, 99, 235, 0.2); color: #60a5fa; }
+        .cat-red { background: rgba(239, 68, 68, 0.2); color: #f87171; }
         .cat-green { background: rgba(16, 185, 129, 0.2); color: #34d399; }
         .cat-purple { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
         .cat-gold { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
@@ -395,10 +396,10 @@
         <nav>
             <a href="#" class="nav-link active"><i class="fa-solid fa-house"></i>الرئيسية <span>Home</span></a>
             <a href="#" class="nav-link"><i class="fa-solid fa-newspaper"></i>المقالات <span>Articles</span></a>
+            <a href="#" class="nav-link"><i class="fa-solid fa-flask"></i>البحوث <span>Research</span></a>
             <a href="#" class="nav-link"><i class="fa-solid fa-book-open"></i>مصادر الدراسة <span>Resources</span></a>
             <a href="#" class="nav-link"><i class="fa-solid fa-graduation-cap"></i>الكورسات <span>Courses</span></a>
             <a href="#" class="nav-link"><i class="fa-solid fa-link"></i>روابط مفيدة <span>Links</span></a>
-            <a href="#" class="nav-link"><i class="fa-solid fa-user"></i>عني <span>About</span></a>
         </nav>
 
         <div class="header-actions">
@@ -422,7 +423,7 @@
             <div class="hero-side">
                 <div>
                     <h3>مرحباً بك في موقعي 👋</h3>
-                    <p>هنا أشارك مقالاتي، مصادر الدراسة، الكورسات، والروابط المفيدة التي تساعدك على التعلم والتطوير.</p>
+                    <p>هنا أشارك مقالاتي، البحوث، مصادر الدراسة، الكورسات، والروابط المفيدة.</p>
                 </div>
                 <div>
                     <a href="/admin/" class="btn-primary">لوحة التحكم <i class="fa-solid fa-arrow-left"></i></a>
@@ -437,6 +438,13 @@
                 <div class="cat-info">
                     <h4>المقالات</h4>
                     <p>Articles</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="cat-icon cat-red"><i class="fa-solid fa-microscope"></i></div>
+                <div class="cat-info">
+                    <h4>البحوث</h4>
+                    <p>Researches</p>
                 </div>
             </div>
             <div class="category-card">
@@ -460,13 +468,6 @@
                     <p>Useful Links</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="cat-icon cat-teal"><i class="fa-solid fa-user"></i></div>
-                <div class="cat-info">
-                    <h4>عني</h4>
-                    <p>About Me</p>
-                </div>
-            </div>
         </section>
 
         <!-- CONTENT SECTIONS -->
@@ -487,12 +488,21 @@
                             <div class="item-meta"><span><i class="fa-regular fa-clock"></i> 25 Aug 2025</span></div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- RESEARCH SECTION -->
+            <div class="section-box">
+                <div class="section-header">
+                    <h3>البحوث والوراق العلمية | Research Papers</h3>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="item-list">
                     <div class="item-card">
-                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=200" class="item-img" alt="stars">
                         <div class="item-details">
-                            <h4>كيف تحافظ على حماسك كطالب</h4>
-                            <p>How to Stay Motivated as a Student</p>
-                            <div class="item-meta"><span><i class="fa-regular fa-clock"></i> 18 Aug 2025</span></div>
+                            <h4>أثر التكنولوجيا في تطوير التعليم</h4>
+                            <p>Impact of Technology on Educational Growth</p>
+                            <button class="btn-primary" style="padding: 4px 12px; font-size: 11px;">قراءة البحث</button>
                         </div>
                     </div>
                 </div>
@@ -510,31 +520,6 @@
                             <h4>English Grammar in Use (PDF)</h4>
                             <p>Raymond Murphy</p>
                             <button class="btn-primary" style="padding: 4px 12px; font-size: 11px;">Download</button>
-                        </div>
-                    </div>
-                    <div class="item-card">
-                        <div class="item-details">
-                            <h4>British Council - Free Resources</h4>
-                            <p>Official Website</p>
-                            <button class="btn-primary" style="padding: 4px 12px; font-size: 11px;">Visit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RECOMMENDED COURSES -->
-            <div class="section-box">
-                <div class="section-header">
-                    <h3>كورسات مقترحة | Recommended Courses</h3>
-                    <a href="#" class="view-all">View All</a>
-                </div>
-                <div class="item-list">
-                    <div class="item-card">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=200" class="item-img" alt="laptop">
-                        <div class="item-details">
-                            <h4>English for Academic Purposes</h4>
-                            <p>British Council ⭐ 4.8</p>
-                            <button class="btn-primary" style="padding: 4px 12px; font-size: 11px;">Start</button>
                         </div>
                     </div>
                 </div>
@@ -572,4 +557,3 @@
     </script>
 </body>
 </html>
-
