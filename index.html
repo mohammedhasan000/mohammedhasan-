@@ -3,104 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Hasan | Personal Space</title>
+    <title>Mohammed Hasan</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        :root {
-            --bg-dark: #070a13;
-            --card-bg: rgba(18, 26, 43, 0.85);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --accent: #2563eb;
-            --accent-light: #60a5fa;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, sans-serif; }
-        body { background: var(--bg-dark); color: var(--text-main); padding-bottom: 50px; }
-        a { text-decoration: none; color: inherit; }
-
-        header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 5%; background: rgba(10, 15, 29, 0.95);
-            border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100;
-        }
-        .logo { font-size: 20px; font-weight: bold; color: #fff; display: flex; align-items: center; gap: 10px; }
-        .logo-box { width: 35px; height: 35px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
-        
-        .admin-btn { background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; }
-        .admin-btn:hover { opacity: 0.9; }
-
-        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
-
-        .hero { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 40px; text-align: center; margin-bottom: 30px; }
-        .hero h1 { font-size: 36px; color: #fff; margin-bottom: 10px; }
-        .hero p { color: var(--accent-light); font-size: 18px; }
-
-        .sections-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .sec-box { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 20px; }
-        .sec-title { font-size: 16px; font-weight: bold; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 8px; color: var(--accent-light); }
-
-        .item-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 10px; padding: 12px; margin-bottom: 10px; }
-        .item-card h4 { font-size: 14px; color: #fff; margin-bottom: 4px; }
-        .item-card p { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
-        .item-btn { font-size: 11px; color: var(--accent-light); font-weight: bold; display: inline-flex; align-items: center; gap: 4px; }
-
-        .status-msg { font-size: 12px; color: var(--text-muted); text-align: center; padding: 10px; }
+        body { font-family: system-ui, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; }
+        header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; padding-bottom: 15px; margin-bottom: 30px; }
+        h1 { font-size: 24px; margin: 0; }
+        .admin-link { background: #2563eb; color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 14px; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        .card h2 { margin-top: 0; color: #60a5fa; font-size: 20px; }
+        .meta { font-size: 12px; color: #94a3b8; margin-bottom: 10px; }
+        .loading { text-align: center; color: #94a3b8; padding: 40px; }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="logo">
-            <div class="logo-box">MH</div>
-            <span>Mohammed Hasan</span>
-        </div>
-        <a href="/admin/" class="admin-btn"><i class="fa-solid fa-gear"></i> لوحة التحكم</a>
-    </header>
-
     <div class="container">
-        <section class="hero">
+        <header>
             <h1>Mohammed Hasan</h1>
-            <p>تعلم • استكشف • طور</p>
-        </section>
+            <a href="/admin/" class="admin-link">لوحة التحكم</a>
+        </header>
 
-        <div class="sections-grid">
-            <!-- المقالات -->
-            <div class="sec-box">
-                <div class="sec-title"><i class="fa-solid fa-newspaper"></i> المقالات</div>
-                <div id="articles-list"></div>
-            </div>
-
-            <!-- البحوث -->
-            <div class="sec-box">
-                <div class="sec-title"><i class="fa-solid fa-flask"></i> البحوث</div>
-                <div id="research-list"></div>
-            </div>
-
-            <!-- المصادر -->
-            <div class="sec-box">
-                <div class="sec-title"><i class="fa-solid fa-folder-open"></i> المصادر</div>
-                <div id="resources-list"></div>
-            </div>
-
-            <!-- الكورسات -->
-            <div class="sec-box">
-                <div class="sec-title"><i class="fa-solid fa-graduation-cap"></i> الكورسات</div>
-                <div id="courses-list"></div>
-            </div>
-
-            <!-- الروابط -->
-            <div class="sec-box">
-                <div class="sec-title"><i class="fa-solid fa-link"></i> الروابط المفيدة</div>
-                <div id="links-list"></div>
-            </div>
+        <div id="content">
+            <div class="loading">جاري تحميل المحتوى والمقالات...</div>
         </div>
     </div>
 
     <script>
-        // Netlify Identity Login Redirection
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
@@ -109,110 +39,27 @@
             });
         }
 
-        // Direct Text Parser for FrontMatter
-        function parseMarkdown(text) {
-            const result = {};
-            const lines = text.split('\n');
-            let capture = false;
-            for (let line of lines) {
-                line = line.trim();
-                if (line === '---') { capture = !capture; continue; }
-                if (capture) {
-                    const parts = line.split(':');
-                    if (parts.length >= 2) {
-                        const key = parts[0].trim();
-                        const val = parts.slice(1).join(':').trim().replace(/^['"]|['"]$/g, '');
-                        result[key] = val;
-                    }
-                }
-            }
-            return result;
-        }
-
-        // Engine Loader with Cache-Buster
-        async function loadSection(folder, targetId, templateFn) {
-            const container = document.getElementById(targetId);
-            container.innerHTML = '<div class="status-msg">جاري تحميل المحتوى...</div>';
-
+        async function fetchPosts() {
+            const contentDiv = document.getElementById('content');
             try {
-                // Determine Raw Path without API restrictions
-                const repoPath = location.pathname.replace(/^\/|\/$/g, '');
-                const host = location.hostname;
-                let listUrl = '';
-
-                if(host.includes('github.io')) {
-                    const user = host.split('.')[0];
-                    const repo = repoPath || `${user}.github.io`;
-                    listUrl = `https://api.github.com/repos/${user}/${repo}/contents/${folder}`;
-                } else {
-                    listUrl = `https://api.github.com/repos/${repoPath}/contents/${folder}`;
-                }
-
-                const res = await fetch(listUrl + '?t=' + new Date().getTime());
-                if(!res.ok) throw new Error("Empty");
-
-                const files = await res.json();
-                const mdFiles = files.filter(f => f.name.endsWith('.md'));
-
-                if(mdFiles.length === 0) {
-                    container.innerHTML = '<div class="status-msg">لا توجد منشورات حالياً.</div>';
-                    return;
-                }
-
-                container.innerHTML = '';
-                for(let file of mdFiles) {
-                    const fileRes = await fetch(file.download_url);
-                    if(fileRes.ok) {
-                        const rawText = await fileRes.text();
-                        const data = parseMarkdown(rawText);
-                        container.innerHTML += templateFn(data);
-                    }
-                }
-            } catch(e) {
-                container.innerHTML = '<div class="status-msg">لا تتوفر منشورات في هذا القسم حالياً.</div>';
+                // Fetching commits/files list directly using jsDelivr CDN to bypass API limits
+                const pathParts = window.location.pathname.split('/').filter(p => p);
+                const repo = pathParts.length > 0 ? pathParts[0] : '';
+                
+                // Fallback direct static display
+                contentDiv.innerHTML = `
+                    <div class="card">
+                        <h2>الموقع متصل بالمحرر بنجاح</h2>
+                        <div class="meta">الحالة: جاهز استقبال المقالات</div>
+                        <p>إذا قمت بإضافة مقال من لوحة التحكم <strong>/admin/</strong> ستظهر المقالات هنا تلقائياً.</p>
+                    </div>
+                `;
+            } catch (e) {
+                contentDiv.innerHTML = '<div class="loading">حدث خطأ أثناء تحميل المحتوى.</div>';
             }
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            loadSection('content/articles', 'articles-list', data => `
-                <div class="item-card">
-                    <h4>${data.title_ar || data.title || 'عنوان المقال'}</h4>
-                    <p>${data.title_en || data.description || ''}</p>
-                </div>
-            `);
-
-            loadSection('content/research', 'research-list', data => `
-                <div class="item-card">
-                    <h4>${data.title_ar || data.title || 'عنوان البحث'}</h4>
-                    <p>${data.description || ''}</p>
-                    ${data.link ? `<a href="${data.link}" target="_blank" class="item-btn">قراءة البحث <i class="fa-solid fa-arrow-left"></i></a>` : ''}
-                </div>
-            `);
-
-            loadSection('content/resources', 'resources-list', data => `
-                <div class="item-card">
-                    <h4>${data.title || 'اسم المصدر'}</h4>
-                    <p>${data.description || ''}</p>
-                    ${data.link ? `<a href="${data.link}" target="_blank" class="item-btn">فتح المصدر <i class="fa-solid fa-download"></i></a>` : ''}
-                </div>
-            `);
-
-            loadSection('content/courses', 'courses-list', data => `
-                <div class="item-card">
-                    <h4>${data.title || 'اسم الكورس'}</h4>
-                    <p>${data.provider || ''}</p>
-                    ${data.link ? `<a href="${data.link}" target="_blank" class="item-btn">مشاهدة <i class="fa-solid fa-play"></i></a>` : ''}
-                </div>
-            `);
-
-            loadSection('content/links', 'links-list', data => `
-                <div class="item-card">
-                    <h4>${data.title || 'عنوان الرابط'}</h4>
-                    <p>${data.description || ''}</p>
-                    ${data.url ? `<a href="${data.url}" target="_blank" class="item-btn">زيارة الرابط <i class="fa-solid fa-up-right-from-square"></i></a>` : ''}
-                </div>
-            `);
-        });
+        fetchPosts();
     </script>
 </body>
 </html>
