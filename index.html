@@ -6,12 +6,12 @@
     <title>Mohammed Hasan | Learn • Explore • Improve</title>
     <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <!-- FontAwesome for icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg-dark: #070a13;
-            --card-bg: rgba(18, 26, 43, 0.7);
+            --card-bg: rgba(18, 26, 43, 0.75);
             --border-color: rgba(255, 255, 255, 0.08);
             --accent-blue: #2563eb;
             --accent-glow: #3b82f6;
@@ -35,7 +35,7 @@
                 radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
                 radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
             background-attachment: fixed;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
         }
 
         a { text-decoration: none; color: inherit; }
@@ -46,7 +46,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
-            background: rgba(10, 15, 29, 0.85);
+            background: rgba(10, 15, 29, 0.9);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             position: sticky;
@@ -71,6 +71,7 @@
             font-weight: bold;
             font-size: 16px;
             border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
         }
 
         .logo-text {
@@ -108,30 +109,20 @@
             gap: 15px;
         }
 
-        .icon-btn {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
+        .admin-btn-head {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
             display: flex;
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            gap: 6px;
             transition: 0.3s;
         }
 
-        .icon-btn:hover { background: rgba(255,255,255,0.15); }
-
-        .lang-btn {
-            font-size: 12px;
-            padding: 5px 10px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            background: rgba(255,255,255,0.05);
-            cursor: pointer;
-        }
+        .admin-btn-head:hover { opacity: 0.9; transform: translateY(-1px); }
 
         /* CONTAINER */
         .container {
@@ -161,14 +152,6 @@
             align-items: center;
             text-align: center;
             backdrop-filter: blur(10px);
-        }
-
-        .hero-main::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
-            pointer-events: none;
         }
 
         .hero-subtitle {
@@ -218,9 +201,6 @@
         .hero-side h3 {
             font-size: 18px;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .hero-side p {
@@ -251,7 +231,7 @@
             box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
         }
 
-        /* MAIN CATEGORIES GRID */
+        /* CATEGORIES GRID */
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -320,10 +300,8 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        .section-header h3 { font-size: 16px; font-weight: 700; }
-        .view-all { font-size: 12px; color: var(--text-muted); border: 1px solid var(--border-color); padding: 4px 10px; border-radius: 6px; }
+        .section-header h3 { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
 
-        /* ITEM CARDS */
         .item-list { display: flex; flex-direction: column; gap: 15px; }
 
         .item-card {
@@ -346,9 +324,8 @@
         }
 
         .item-details { flex: 1; }
-        .item-details h4 { font-size: 13px; margin-bottom: 5px; line-height: 1.4; }
-        .item-details p { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
-        .item-meta { font-size: 10px; color: var(--text-muted); display: flex; gap: 10px; }
+        .item-details h4 { font-size: 14px; margin-bottom: 5px; color: #fff; }
+        .item-details p { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; line-height: 1.4; }
 
         /* FOOTER */
         footer {
@@ -366,8 +343,8 @@
 
         .social-links { display: flex; gap: 12px; }
         .social-icon {
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.05);
             display: flex;
@@ -399,15 +376,13 @@
             <a href="#" class="nav-link active"><i class="fa-solid fa-house"></i>الرئيسية <span>Home</span></a>
             <a href="#articles" class="nav-link"><i class="fa-solid fa-newspaper"></i>المقالات <span>Articles</span></a>
             <a href="#research" class="nav-link"><i class="fa-solid fa-flask"></i>البحوث <span>Research</span></a>
-            <a href="#resources" class="nav-link"><i class="fa-solid fa-book-open"></i>مصادر الدراسة <span>Resources</span></a>
+            <a href="#resources" class="nav-link"><i class="fa-solid fa-book-open"></i>مصادر <span>Resources</span></a>
             <a href="#courses" class="nav-link"><i class="fa-solid fa-graduation-cap"></i>الكورسات <span>Courses</span></a>
-            <a href="#links" class="nav-link"><i class="fa-solid fa-link"></i>روابط مفيدة <span>Links</span></a>
+            <a href="#links" class="nav-link"><i class="fa-solid fa-link"></i>روابط <span>Links</span></a>
         </nav>
 
         <div class="header-actions">
-            <button class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <button class="icon-btn"><i class="fa-solid fa-moon"></i></button>
-            <span class="lang-btn">AR | EN</span>
+            <a href="/admin/" class="admin-btn-head"><i class="fa-solid fa-user-gear"></i> لوحة التحكم</a>
         </div>
     </header>
 
@@ -425,10 +400,10 @@
             <div class="hero-side">
                 <div>
                     <h3>مرحباً بك في موقعي 👋</h3>
-                    <p>هنا أشارك مقالاتي، البحوث، مصادر الدراسة، الكورسات، والروابط المفيدة.</p>
+                    <p>المساحة الخاصة لنشر المقالات، البحوث العلمية، مصادر الدراسة، والكورسات المفيدة.</p>
                 </div>
                 <div>
-                    <a href="/admin/" class="btn-primary">لوحة التحكم <i class="fa-solid fa-arrow-left"></i></a>
+                    <a href="/admin/" class="btn-primary">دخول لوحة النشر <i class="fa-solid fa-pen-to-square"></i></a>
                 </div>
             </div>
         </section>
@@ -452,7 +427,7 @@
             <a href="#resources" class="category-card">
                 <div class="cat-icon cat-green"><i class="fa-solid fa-folder-open"></i></div>
                 <div class="cat-info">
-                    <h4>مصادر الدراسة</h4>
+                    <h4>المصادر</h4>
                     <p>Resources</p>
                 </div>
             </a>
@@ -466,7 +441,7 @@
             <a href="#links" class="category-card">
                 <div class="cat-icon cat-gold"><i class="fa-solid fa-link"></i></div>
                 <div class="cat-info">
-                    <h4>روابط مفيدة</h4>
+                    <h4>الروابط</h4>
                     <p>Useful Links</p>
                 </div>
             </a>
@@ -475,54 +450,44 @@
         <!-- CONTENT SECTIONS -->
         <div class="content-grid">
 
-            <!-- LATEST ARTICLES -->
+            <!-- ARTICLES -->
             <div class="section-box" id="articles">
                 <div class="section-header">
-                    <h3>آخر المقالات | Articles</h3>
+                    <h3><i class="fa-solid fa-newspaper" style="color:#60a5fa;"></i> المقالات | Articles</h3>
                 </div>
-                <div class="item-list" id="articles-container">
-                    <p style="color:var(--text-muted); font-size:12px;">جاري التحديث...</p>
-                </div>
+                <div class="item-list" id="articles-container"></div>
             </div>
 
-            <!-- RESEARCH SECTION -->
+            <!-- RESEARCH -->
             <div class="section-box" id="research">
                 <div class="section-header">
-                    <h3>البحوث | Research</h3>
+                    <h3><i class="fa-solid fa-flask" style="color:#f87171;"></i> البحوث | Research</h3>
                 </div>
-                <div class="item-list" id="research-container">
-                    <p style="color:var(--text-muted); font-size:12px;">جاري التحديث...</p>
-                </div>
+                <div class="item-list" id="research-container"></div>
             </div>
 
-            <!-- FEATURED RESOURCES -->
+            <!-- RESOURCES -->
             <div class="section-box" id="resources">
                 <div class="section-header">
-                    <h3>مصادر الدراسة | Resources</h3>
+                    <h3><i class="fa-solid fa-book-open" style="color:#34d399;"></i> مصادر الدراسة | Resources</h3>
                 </div>
-                <div class="item-list" id="resources-container">
-                    <p style="color:var(--text-muted); font-size:12px;">جاري التحديث...</p>
-                </div>
+                <div class="item-list" id="resources-container"></div>
             </div>
 
-            <!-- COURSES SECTION -->
+            <!-- COURSES -->
             <div class="section-box" id="courses">
                 <div class="section-header">
-                    <h3>الكورسات | Courses</h3>
+                    <h3><i class="fa-solid fa-graduation-cap" style="color:#a78bfa;"></i> الكورسات | Courses</h3>
                 </div>
-                <div class="item-list" id="courses-container">
-                    <p style="color:var(--text-muted); font-size:12px;">جاري التحديث...</p>
-                </div>
+                <div class="item-list" id="courses-container"></div>
             </div>
 
-            <!-- USEFUL LINKS SECTION -->
+            <!-- LINKS -->
             <div class="section-box" id="links">
                 <div class="section-header">
-                    <h3>روابط مفيدة | Links</h3>
+                    <h3><i class="fa-solid fa-link" style="color:#fbbf24;"></i> روابط مفيدة | Links</h3>
                 </div>
-                <div class="item-list" id="links-container">
-                    <p style="color:var(--text-muted); font-size:12px;">جاري التحديث...</p>
-                </div>
+                <div class="item-list" id="links-container"></div>
             </div>
 
         </div>
@@ -534,18 +499,18 @@
                 <a href="#" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
                 <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
             </div>
 
             <div>© 2026 Mohammed Hasan. All rights reserved.</div>
 
-            <a href="#" class="view-all"><i class="fa-solid fa-arrow-up"></i> للعلى</a>
+            <a href="#" style="color:#60a5fa;"><i class="fa-solid fa-arrow-up"></i> للأعلى</a>
         </footer>
 
     </div>
 
-    <!-- SCRIPT TO DYNAMICALLY LOAD CMS CONTENT -->
+    <!-- SCRIPT FOR AUTOMATIC DISCOVERY & DISPLAY -->
     <script>
+      // Login Identity Check
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
           if (!user) {
@@ -556,96 +521,89 @@
         });
       }
 
+      // Universal FrontMatter Parser
       function parseFrontMatter(text) {
-        const result = {};
-        const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-        if (match) {
-          const lines = match[1].split('\n');
-          lines.forEach(line => {
-            const parts = line.split(':');
-            if (parts.length >= 2) {
-              const key = parts[0].trim();
-              const val = parts.slice(1).join(':').trim().replace(/^["']|["']$/g, '');
-              result[key] = val;
+        const data = {};
+        const lines = text.split('\n');
+        let inFrontMatter = false;
+        
+        for (let line of lines) {
+          line = line.trim();
+          if (line === '---') {
+            inFrontMatter = !inFrontMatter;
+            continue;
+          }
+          if (inFrontMatter) {
+            const colonIdx = line.indexOf(':');
+            if (colonIdx !== -1) {
+              const key = line.substring(0, colonIdx).trim();
+              let val = line.substring(colonIdx + 1).trim();
+              val = val.replace(/^["']|["']$/g, ''); // Clear quotes
+              data[key] = val;
             }
-          });
+          }
         }
-        return result;
+        return data;
       }
 
-      async function fetchFilesDirectly(folderPath) {
-        try {
-          // جلب من الخادم المباشر للموقع
-          const res = await fetch(`/${folderPath}/`);
-          if (!res.ok) return [];
-          const html = await res.text();
-          const doc = new DOMParser().parseFromString(html, 'text/html');
-          const links = Array.from(doc.querySelectorAll('a'))
-                             .map(a => a.getAttribute('href'))
-                             .filter(href => href && href.endsWith('.md'));
-          return links;
-        } catch(e) {
-          return [];
-        }
-      }
-
-      async function loadCollection(folder, containerId, renderCard) {
+      // Ultra-robust Collection Loader
+      async function loadCollection(folder, containerId, renderHTML) {
         const container = document.getElementById(containerId);
+        container.innerHTML = '<p style="color:var(--text-muted); font-size:12px;">جاري فحص المحتوى...</p>';
+
         try {
-          // محاولة جلب الملفات عبر GitHub API أولاً
-          const repoPath = window.location.hostname.includes('github.io') ? window.location.pathname.split('/')[1] : '';
-          let apiUrl = repoPath ? `https://api.github.com/repos/${repoPath}/contents/${folder}` : '';
+          // Identify GitHub user and repo from URL automatically
+          const pathSegments = location.pathname.split('/').filter(Boolean);
+          const repoName = pathSegments[0] || '';
+          const host = location.hostname;
           
-          let files = [];
-          if(apiUrl) {
-             const res = await fetch(apiUrl);
-             if(res.ok) files = await res.json();
+          let fetchUrl = '';
+          if (host.includes('github.io') && repoName) {
+            const owner = host.split('.')[0];
+            fetchUrl = `https://api.github.com/repos/${owner}/${repoName}/contents/${folder}`;
+          } else {
+            fetchUrl = `https://api.github.com/repos/` + location.pathname.replace(/^\/|\/$/g, '') + `/contents/${folder}`;
           }
 
-          if (!files || files.length === 0) {
-             // تجربة جلب مباشر إن متعذر API
-             const directLinks = await fetchFilesDirectly(folder);
-             files = directLinks.map(link => ({ download_url: link, name: link }));
-          }
+          const res = await fetch(fetchUrl);
+          if (!res.ok) throw new Error("Folder not accessible yet");
+          
+          const files = await res.json();
+          const mdFiles = files.filter(f => f.name.endsWith('.md'));
 
-          if(!files || files.length === 0) {
-             container.innerHTML = '<p style="color:var(--text-muted); font-size:12px;">لا تتوفر منشورات حالياً.</p>';
-             return;
+          if (mdFiles.length === 0) {
+            container.innerHTML = '<p style="color:var(--text-muted); font-size:12px;">لا تتوفر منشورات في هذا القسم حالياً.</p>';
+            return;
           }
 
           container.innerHTML = '';
-          for (let file of files) {
-            if (file.name && file.name.endsWith('.md')) {
-              const contentRes = await fetch(file.download_url || `/${folder}/${file.name}`);
-              if(contentRes.ok) {
-                 const text = await contentRes.text();
-                 const data = parseFrontMatter(text);
-                 container.innerHTML += renderCard(data);
-              }
+          for (let file of mdFiles) {
+            const contentRes = await fetch(file.download_url);
+            if (contentRes.ok) {
+              const text = await contentRes.text();
+              const meta = parseFrontMatter(text);
+              container.innerHTML += renderHTML(meta);
             }
           }
-          if(container.innerHTML.trim() === '') {
-            container.innerHTML = '<p style="color:var(--text-muted); font-size:12px;">لا تتوفر منشورات حالياً.</p>';
-          }
-        } catch(e) {
-          container.innerHTML = '<p style="color:var(--text-muted); font-size:12px;">لا تتوفر منشورات حالياً.</p>';
+        } catch (err) {
+          container.innerHTML = '<p style="color:var(--text-muted); font-size:12px;">لا تتوفر منشورات حالياً (أو لم تقم بالنشر فيه بعد).</p>';
         }
       }
 
-      window.addEventListener('DOMContentLoaded', () => {
-        // 1. Articles
+      // Execute on Page Load
+      window.addEventListener('load', () => {
+        // 1. المقالات
         loadCollection('content/articles', 'articles-container', data => `
           <div class="item-card">
             ${data.image ? `<img src="${data.image}" class="item-img">` : ''}
             <div class="item-details">
               <h4>${data.title_ar || data.title_en || 'مقالة بدون عنوان'}</h4>
               <p>${data.title_en || ''}</p>
-              <div class="item-meta"><span><i class="fa-regular fa-clock"></i> ${data.date ? data.date.substring(0,10) : ''}</span></div>
             </div>
           </div>
         `);
 
-        // 2. Research
+        // 2. البحوث
         loadCollection('content/research', 'research-container', data => `
           <div class="item-card">
             <div class="item-details">
@@ -656,36 +614,36 @@
           </div>
         `);
 
-        // 3. Resources
+        // 3. المصادر
         loadCollection('content/resources', 'resources-container', data => `
           <div class="item-card">
             <div class="item-details">
               <h4>${data.title || 'مصدر بدون عنوان'}</h4>
               <p>${data.description || ''}</p>
-              ${data.link ? `<a href="${data.link}" target="_blank" class="btn-primary">فتح / تحميل <i class="fa-solid fa-download"></i></a>` : ''}
+              ${data.link ? `<a href="${data.link}" target="_blank" class="btn-primary">فتح المصدر <i class="fa-solid fa-download"></i></a>` : ''}
             </div>
           </div>
         `);
 
-        // 4. Courses
+        // 4. الكورسات
         loadCollection('content/courses', 'courses-container', data => `
           <div class="item-card">
             ${data.image ? `<img src="${data.image}" class="item-img">` : ''}
             <div class="item-details">
               <h4>${data.title || 'كورس بدون عنوان'}</h4>
               <p>${data.provider || ''}</p>
-              ${data.link ? `<a href="${data.link}" target="_blank" class="btn-primary">بدء الكورس <i class="fa-solid fa-play"></i></a>` : ''}
+              ${data.link ? `<a href="${data.link}" target="_blank" class="btn-primary">مشاهدة الكورس <i class="fa-solid fa-play"></i></a>` : ''}
             </div>
           </div>
         `);
 
-        // 5. Useful Links
+        // 5. الروابط المفيدة
         loadCollection('content/links', 'links-container', data => `
           <div class="item-card">
             <div class="item-details">
               <h4>${data.title || 'رابط بدون عنوان'}</h4>
               <p>${data.description || ''}</p>
-              ${data.url ? `<a href="${data.url}" target="_blank" class="btn-primary">زيارة الموقع <i class="fa-solid fa-up-right-from-square"></i></a>` : ''}
+              ${data.url ? `<a href="${data.url}" target="_blank" class="btn-primary">زيارة الرابط <i class="fa-solid fa-up-right-from-square"></i></a>` : ''}
             </div>
           </div>
         `);
@@ -693,4 +651,3 @@
     </script>
 </body>
 </html>
-
