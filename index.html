@@ -1,4 +1,4 @@
-here<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -289,7 +289,6 @@ here<!DOCTYPE html>
         .cat-green { background: rgba(16, 185, 129, 0.2); color: #34d399; }
         .cat-purple { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
         .cat-gold { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
-        .cat-teal { background: rgba(20, 184, 166, 0.2); color: #2dd4bf; }
 
         .cat-info h4 { font-size: 15px; margin-bottom: 3px; }
         .cat-info p { font-size: 11px; color: var(--text-muted); }
@@ -343,6 +342,7 @@ here<!DOCTYPE html>
             object-fit: cover;
         }
 
+        .item-details { flex: 1; }
         .item-details h4 { font-size: 13px; margin-bottom: 5px; line-height: 1.4; }
         .item-details p { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
         .item-meta { font-size: 10px; color: var(--text-muted); display: flex; gap: 10px; }
@@ -376,7 +376,6 @@ here<!DOCTYPE html>
 
         .social-icon:hover { background: var(--accent-blue); }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero { grid-template-columns: 1fr; }
             nav { display: none; }
@@ -395,11 +394,11 @@ here<!DOCTYPE html>
 
         <nav>
             <a href="#" class="nav-link active"><i class="fa-solid fa-house"></i>الرئيسية <span>Home</span></a>
-            <a href="#" class="nav-link"><i class="fa-solid fa-newspaper"></i>المقالات <span>Articles</span></a>
-            <a href="#" class="nav-link"><i class="fa-solid fa-flask"></i>البحوث <span>Research</span></a>
-            <a href="#" class="nav-link"><i class="fa-solid fa-book-open"></i>مصادر الدراسة <span>Resources</span></a>
-            <a href="#" class="nav-link"><i class="fa-solid fa-graduation-cap"></i>الكورسات <span>Courses</span></a>
-            <a href="#" class="nav-link"><i class="fa-solid fa-link"></i>روابط مفيدة <span>Links</span></a>
+            <a href="#articles" class="nav-link"><i class="fa-solid fa-newspaper"></i>المقالات <span>Articles</span></a>
+            <a href="#research" class="nav-link"><i class="fa-solid fa-flask"></i>البحوث <span>Research</span></a>
+            <a href="#resources" class="nav-link"><i class="fa-solid fa-book-open"></i>مصادر الدراسة <span>Resources</span></a>
+            <a href="#courses" class="nav-link"><i class="fa-solid fa-graduation-cap"></i>الكورسات <span>Courses</span></a>
+            <a href="#links" class="nav-link"><i class="fa-solid fa-link"></i>روابط مفيدة <span>Links</span></a>
         </nav>
 
         <div class="header-actions">
@@ -433,95 +432,87 @@ here<!DOCTYPE html>
 
         <!-- CATEGORIES GRID -->
         <section class="categories-grid">
-            <div class="category-card">
+            <a href="#articles" class="category-card">
                 <div class="cat-icon cat-blue"><i class="fa-solid fa-file-lines"></i></div>
                 <div class="cat-info">
                     <h4>المقالات</h4>
                     <p>Articles</p>
                 </div>
-            </div>
-            <div class="category-card">
+            </a>
+            <a href="#research" class="category-card">
                 <div class="cat-icon cat-red"><i class="fa-solid fa-microscope"></i></div>
                 <div class="cat-info">
                     <h4>البحوث</h4>
-                    <p>Researches</p>
+                    <p>Research</p>
                 </div>
-            </div>
-            <div class="category-card">
+            </a>
+            <a href="#resources" class="category-card">
                 <div class="cat-icon cat-green"><i class="fa-solid fa-folder-open"></i></div>
                 <div class="cat-info">
                     <h4>مصادر الدراسة</h4>
                     <p>Study Resources</p>
                 </div>
-            </div>
-            <div class="category-card">
+            </a>
+            <a href="#courses" class="category-card">
                 <div class="cat-icon cat-purple"><i class="fa-solid fa-graduation-cap"></i></div>
                 <div class="cat-info">
                     <h4>الكورسات</h4>
                     <p>Courses</p>
                 </div>
-            </div>
-            <div class="category-card">
+            </a>
+            <a href="#links" class="category-card">
                 <div class="cat-icon cat-gold"><i class="fa-solid fa-link"></i></div>
                 <div class="cat-info">
                     <h4>روابط مفيدة</h4>
                     <p>Useful Links</p>
                 </div>
-            </div>
+            </a>
         </section>
 
         <!-- CONTENT SECTIONS -->
         <div class="content-grid">
 
             <!-- LATEST ARTICLES -->
-            <div class="section-box">
+            <div class="section-box" id="articles">
                 <div class="section-header">
-                    <h3>آخر المقالات | Latest Articles</h3>
+                    <h3>آخر المقالات | Articles</h3>
                     <a href="#" class="view-all">View All</a>
                 </div>
-                <div class="item-list">
-                    <div class="item-card">
-                        <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=200" class="item-img" alt="book">
-                        <div class="item-details">
-                            <h4>قوة القراءة في تشكيل عقلك</h4>
-                            <p>The Power of Reading in Shaping Your Mind</p>
-                            <div class="item-meta"><span><i class="fa-regular fa-clock"></i> 25 Aug 2025</span></div>
-                        </div>
-                    </div>
+                <div class="item-list" id="articles-container">
+                    <p style="color:var(--text-muted); font-size:12px;">جاري تحميل المقالات...</p>
                 </div>
             </div>
 
             <!-- RESEARCH SECTION -->
-            <div class="section-box">
+            <div class="section-box" id="research">
                 <div class="section-header">
-                    <h3>البحوث والوراق العلمية | Research Papers</h3>
+                    <h3>البحوث | Research</h3>
                     <a href="#" class="view-all">View All</a>
                 </div>
-                <div class="item-list">
-                    <div class="item-card">
-                        <div class="item-details">
-                            <h4>أثر التكنولوجيا في تطوير التعليم</h4>
-                            <p>Impact of Technology on Educational Growth</p>
-                            <button class="btn-primary" style="padding: 4px 12px; font-size: 11px;">قراءة البحث</button>
-                        </div>
-                    </div>
+                <div class="item-list" id="research-container">
+                    <p style="color:var(--text-muted); font-size:12px;">جاري تحميل البحوث...</p>
                 </div>
             </div>
 
             <!-- FEATURED RESOURCES -->
-            <div class="section-box">
+            <div class="section-box" id="resources">
                 <div class="section-header">
-                    <h3>موارد مميزة | Featured Resources</h3>
+                    <h3>مصادر الدراسة | Resources</h3>
                     <a href="#" class="view-all">View All</a>
                 </div>
-                <div class="item-list">
-                    <div class="item-card">
-                        <div class="item-details">
-                            <h4>English Grammar in Use (PDF)</h4>
-                            <p>Raymond Murphy</p>
-                            <button class="btn-primary" style="padding: 4px 12px; font-size: 11px;">Download</button>
-                        </div>
-                    </div>
+                <div class="item-list" id="resources-container">
+                    <p style="color:var(--text-muted); font-size:12px;">جاري تحميل المصادر...</p>
+                </div>
+            </div>
+
+            <!-- COURSES SECTION -->
+            <div class="section-box" id="courses">
+                <div class="section-header">
+                    <h3>الكورسات | Courses</h3>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="item-list" id="courses-container">
+                    <p style="color:var(--text-muted); font-size:12px;">جاري تحميل الكورسات...</p>
                 </div>
             </div>
 
@@ -544,6 +535,7 @@ here<!DOCTYPE html>
 
     </div>
 
+    <!-- SCRIPT TO DYNAMICALLY LOAD CMS CONTENT -->
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
@@ -554,6 +546,95 @@ here<!DOCTYPE html>
           }
         });
       }
+
+      // Helper function to parse FrontMatter Markdown
+      function parseFrontMatter(text) {
+        const result = {};
+        const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+        if (match) {
+          const lines = match[1].split('\n');
+          lines.forEach(line => {
+            const parts = line.split(':');
+            if (parts.length >= 2) {
+              const key = parts[0].trim();
+              const val = parts.slice(1).join(':').trim().replace(/^["']|["']$/g, '');
+              result[key] = val;
+            }
+          });
+        }
+        return result;
+      }
+
+      // Fetch and Display Content from GitHub Folder
+      async function loadCollection(folder, containerId, renderCard) {
+        const container = document.getElementById(containerId);
+        try {
+          const res = await fetch(`https://api.github.com/repos/${location.pathname.split('/')[1] || ''}/contents/${folder}`);
+          if(!res.ok) throw new Error('No content');
+          const files = await res.json();
+          container.innerHTML = '';
+          for (let file of files) {
+            if (file.name.endsWith('.md')) {
+              const contentRes = await fetch(file.download_url);
+              const text = await contentRes.text();
+              const data = parseFrontMatter(text);
+              container.innerHTML += renderCard(data);
+            }
+          }
+          if(container.innerHTML === '') container.innerHTML = '<p style="color:var(--text-muted); font-size:12px;">لا تتوفر منشورات حالياً.</p>';
+        } catch(e) {
+          container.innerHTML = '<p style="color:var(--text-muted); font-size:12px;">لا تتوفر منشورات حالياً.</p>';
+        }
+      }
+
+      // Load all collections
+      window.addEventListener('DOMContentLoaded', () => {
+        // Load Articles
+        loadCollection('content/articles', 'articles-container', data => `
+          <div class="item-card">
+            ${data.image ? `<img src="${data.image}" class="item-img">` : ''}
+            <div class="item-details">
+              <h4>${data.title_ar || data.title_en || 'بدون عنوان'}</h4>
+              <p>${data.title_en || ''}</p>
+              <div class="item-meta"><span><i class="fa-regular fa-clock"></i> ${data.date ? data.date.substring(0,10) : ''}</span></div>
+            </div>
+          </div>
+        `);
+
+        // Load Research
+        loadCollection('content/research', 'research-container', data => `
+          <div class="item-card">
+            <div class="item-details">
+              <h4>${data.title_ar || data.title_en || 'بحث بدون عنوان'}</h4>
+              <p>${data.description || data.title_en || ''}</p>
+              ${data.link ? `<a href="${data.link}" target="_blank" class="btn-primary" style="padding: 4px 12px; font-size: 11px;">قراءة البحث</a>` : ''}
+            </div>
+          </div>
+        `);
+
+        // Load Resources
+        loadCollection('content/resources', 'resources-container', data => `
+          <div class="item-card">
+            <div class="item-details">
+              <h4>${data.title || 'مصدر بدون عنوان'}</h4>
+              <p>${data.description || ''}</p>
+              ${data.link ? `<a href="${data.link}" target="_blank" class="btn-primary" style="padding: 4px 12px; font-size: 11px;">تحميل / فتح</a>` : ''}
+            </div>
+          </div>
+        `);
+
+        // Load Courses
+        loadCollection('content/courses', 'courses-container', data => `
+          <div class="item-card">
+            ${data.image ? `<img src="${data.image}" class="item-img">` : ''}
+            <div class="item-details">
+              <h4>${data.title || 'كورس بدون عنوان'}</h4>
+              <p>${data.provider || ''}</p>
+              ${data.link ? `<a href="${data.link}" target="_blank" class="btn-primary" style="padding: 4px 12px; font-size: 11px;">بدء الكورس</a>` : ''}
+            </div>
+          </div>
+        `);
+      });
     </script>
 </body>
 </html>
