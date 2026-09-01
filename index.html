@@ -3,273 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Hasan | English Academic Hub</title>
-    <!-- FontAwesome Icons -->
+    <title>English Studies & Academic Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --bg-main: #0a0f1d;
-            --bg-card: rgba(19, 29, 51, 0.85);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --accent-blue: #3b82f6;
-            --accent-glow: #60a5fa;
-            --accent-green: #10b981;
-            --accent-purple: #8b5cf6;
-            --accent-amber: #f59e0b;
+            --bg: #0b0f19;
+            --card-bg: #151d30;
+            --border: rgba(255, 255, 255, 0.1);
+            --accent: #3b82f6;
             --text-title: #ffffff;
             --text-body: #cbd5e1;
             --text-muted: #94a3b8;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { background: var(--bg-main); color: var(--text-body); line-height: 1.6; padding-bottom: 60px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg); color: var(--text-body); padding-bottom: 50px; line-height: 1.6; }
         a { text-decoration: none; color: inherit; }
 
-        /* HEADER */
         header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 18px 6%; background: rgba(10, 15, 29, 0.95);
-            border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;
-            backdrop-filter: blur(10px);
+            padding: 18px 8%; background: rgba(11, 15, 25, 0.95);
+            border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
         }
-        .brand { display: flex; align-items: center; gap: 12px; }
-        .brand-logo {
-            width: 40px; height: 40px; border-radius: 50%;
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 16px; color: #fff;
-            box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
-        }
-        .brand-name { font-size: 18px; font-weight: 700; color: var(--text-title); letter-spacing: 0.5px; }
+        .brand { font-size: 20px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 10px; }
+        .brand-icon { width: 38px; height: 38px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
-        .header-actions { display: flex; align-items: center; gap: 15px; }
-        .admin-btn {
-            background: var(--accent-blue); color: #fff; padding: 8px 16px;
-            border-radius: 20px; font-size: 13px; font-weight: 600;
-            display: flex; align-items: center; gap: 6px; transition: 0.3s;
-        }
-        .admin-btn:hover { background: #1d4ed8; }
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
 
-        /* CONTAINER */
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-
-        /* HERO SECTION */
         .hero {
-            background: var(--bg-card); border: 1px solid var(--border-color);
-            border-radius: 20px; padding: 50px 30px; text-align: center; margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px 20px; text-align: center; margin-bottom: 30px;
         }
-        .hero h1 { font-size: 38px; color: var(--text-title); margin-bottom: 12px; }
-        .hero p { font-size: 18px; color: var(--accent-glow); font-weight: 600; margin-bottom: 15px; }
-        .hero-desc { max-width: 750px; margin: 0 auto; color: var(--text-muted); font-size: 14px; }
+        .hero h1 { font-size: 32px; color: var(--text-title); margin-bottom: 10px; }
+        .hero p { color: var(--accent); font-size: 16px; font-weight: 600; }
 
-        /* SECTIONS GRID */
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .grid-sections { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .sec-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+        .sec-header { font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
 
-        .section-box {
-            background: var(--bg-card); border: 1px solid var(--border-color);
-            border-radius: 16px; padding: 25px; backdrop-filter: blur(8px);
-        }
-
-        .section-header {
-            font-size: 18px; font-weight: 700; color: var(--text-title);
-            padding-bottom: 12px; margin-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-            display: flex; align-items: center; gap: 10px;
-        }
-
-        /* CARD ITEM */
-        .item-card {
-            background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color);
-            border-radius: 12px; padding: 16px; margin-bottom: 15px; transition: 0.3s ease;
-        }
-        .item-card:hover { border-color: rgba(59, 130, 246, 0.5); transform: translateY(-2px); }
-
-        .item-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; }
-        .tag-lit { background: rgba(239, 68, 68, 0.2); color: #f87171; }
-        .tag-ling { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
-        .tag-phon { background: rgba(16, 185, 129, 0.2); color: #34d399; }
-        .tag-course { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
-        .tag-book { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
-        .tag-research { background: rgba(236, 72, 153, 0.2); color: #f472b6; }
-
-        .item-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-        .item-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
-
-        .item-btn {
-            font-size: 12px; font-weight: 600; color: var(--accent-glow);
-            display: inline-flex; align-items: center; gap: 6px; transition: 0.2s;
-        }
-        .item-btn:hover { text-decoration: underline; gap: 8px; }
-
-        /* FOOTER */
-        footer {
-            margin-top: 60px; text-align: center; color: var(--text-muted);
-            font-size: 13px; padding-top: 20px; border-top: 1px solid var(--border-color);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 28px; }
-            .grid-layout { grid-template-columns: 1fr; }
-        }
+        .item-box { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 14px; margin-bottom: 12px; }
+        .item-box h4 { font-size: 15px; color: #fff; margin-bottom: 6px; }
+        .item-box p { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; }
+        .item-link { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--accent); font-weight: 600; }
+        .item-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="brand">
-            <div class="brand-logo">MH</div>
-            <div class="brand-name">Mohammed Hasan</div>
-        </div>
-        <div class="header-actions">
-            <a href="/admin/" class="admin-btn"><i class="fa-solid fa-gear"></i> Control Panel</a>
+            <div class="brand-icon">MH</div>
+            <span>Academic Portal</span>
         </div>
     </header>
 
     <div class="container">
-
-        <!-- HERO -->
         <section class="hero">
-            <h1>Mohammed Hasan</h1>
-            <p>English Language, Literature & Linguistics Hub</p>
-            <p class="hero-desc">Complete academic portal for undergraduate curriculum textbooks, academic research papers, phonetics guides, and free postgraduate preparation courses.</p>
+            <h1>English Studies & Academic Hub</h1>
+            <p>Complete Reference Library for Literature, Linguistics & Phonetics</p>
         </section>
 
-        <div class="grid-layout">
-
-            <!-- 1. ACADEMIC RESEARCH -->
-            <div class="section-box" id="research">
-                <div class="section-header">
-                    <i class="fa-solid fa-flask" style="color: #ec4899;"></i> Academic Research
+        <div class="grid-sections">
+            <!-- 1. Articles -->
+            <div class="sec-card">
+                <div class="sec-header"><i class="fa-solid fa-book-open"></i> Academic Readings</div>
+                
+                <div class="item-box">
+                    <h4>Shakespeare Adaptation Techniques</h4>
+                    <p>Analysis of how Shakespeare adapted classical sources and Italian novellas into drama.</p>
+                    <a href="https://www.bl.uk/shakespeare" target="_blank" class="item-link">British Library Guide <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
-                <div class="item-card">
-                    <span class="item-tag tag-research">Shakespeare Studies</span>
-                    <div class="item-title">Adaptation of Italian Sources in Othello & Romeo and Juliet</div>
-                    <div class="item-desc">Comparative literary study analyzing how Shakespeare transformed Giraldi Cinthio and Matteo Bandello's novellas into dramatic tragedies.</div>
-                    <a href="https://www.jstor.org" target="_blank" class="item-btn">Access Research Paper <i class="fa-solid fa-file-pdf"></i></a>
-                </div>
-
-                <div class="item-card">
-                    <span class="item-tag tag-research">Syntax & Grammar</span>
-                    <div class="item-title">The Subjunctive Mood in Contemporary English Syntax</div>
-                    <div class="item-desc">A structural breakdown of mandative, formulaic, and conditional subjunctive uses across modern formal prose.</div>
-                    <a href="https://www.jstor.org" target="_blank" class="item-btn">Access Research Paper <i class="fa-solid fa-file-pdf"></i></a>
-                </div>
-
-                <div class="item-card">
-                    <span class="item-tag tag-research">Phonology</span>
-                    <div class="item-title">Acoustic Analysis of Vowel Formants in RP English</div>
-                    <div class="item-desc">An empirical study measuring tongue position, vowel length, and sound articulation parameters in standard RP.</div>
-                    <a href="https://www.phonetics.ucla.edu/" target="_blank" class="item-btn">Access Research Paper <i class="fa-solid fa-file-pdf"></i></a>
+                <div class="item-box">
+                    <h4>IPA Phonetics & Vowel Articulation</h4>
+                    <p>Detailed guide on English Phonology and Received Pronunciation (RP) standards.</p>
+                    <a href="https://www.phonetics.ucla.edu/" target="_blank" class="item-link">UCLA Phonetics Lab <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- 2. ACADEMIC ARTICLES -->
-            <div class="section-box" id="articles">
-                <div class="section-header">
-                    <i class="fa-solid fa-newspaper" style="color: var(--accent-blue);"></i> Academic Articles
+            <!-- 2. Textbooks -->
+            <div class="sec-card">
+                <div class="sec-header"><i class="fa-solid fa-graduation-cap"></i> University Curriculum Books</div>
+                
+                <div class="item-box">
+                    <h4>Better English Pronunciation (O'Connor)</h4>
+                    <p>Essential textbook for 1st and 2nd year Phonetics & Phonology students.</p>
+                    <a href="https://archive.org/details/betterenglishpro0000ocon" target="_blank" class="item-link">Open Library Book <i class="fa-solid fa-file-pdf"></i></a>
                 </div>
 
-                <div class="item-card">
-                    <span class="item-tag tag-lit">Literature</span>
-                    <div class="item-title">William Shakespeare & Renaissance Intertextuality</div>
-                    <div class="item-desc">British Library historical overview of Elizabethan theater borrowing techniques and source material adaptations.</div>
-                    <a href="https://www.bl.uk/shakespeare" target="_blank" class="item-btn">Read on British Library <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-
-                <div class="item-card">
-                    <span class="item-tag tag-phon">Phonetics</span>
-                    <div class="item-title">Place and Manner of Articulation Guide</div>
-                    <div class="item-desc">Comprehensive UCLA Phonetics Lab guide covering bilabials, labiodentals, alveolar stops, and fricative consonants.</div>
-                    <a href="https://www.phonetics.ucla.edu/" target="_blank" class="item-btn">Explore UCLA Phonetics <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-
-                <div class="item-card">
-                    <span class="item-tag tag-ling">Linguistics</span>
-                    <div class="item-title">Pragmatics vs. Semantics: Contextual Meaning</div>
-                    <div class="item-desc">Stanford Encyclopedia of Philosophy entry on speech acts, implicature, and Gricean Conversational Maxims.</div>
-                    <a href="https://plato.stanford.edu/entries/pragmatics/" target="_blank" class="item-btn">Read Stanford Entry <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="item-box">
+                    <h4>The Study of Language (George Yule)</h4>
+                    <p>Standard core book for 3rd and 4th year Linguistics & Pragmatics modules.</p>
+                    <a href="https://archive.org/details/studyoflanguage0000yule" target="_blank" class="item-link">Open Library Book <i class="fa-solid fa-file-pdf"></i></a>
                 </div>
             </div>
 
-            <!-- 3. UNIVERSITY CURRICULUM BOOKS (1st to 4th Year) -->
-            <div class="section-box" id="books">
-                <div class="section-header">
-                    <i class="fa-solid fa-graduation-cap" style="color: var(--accent-amber);"></i> 4-Year University Textbooks
+            <!-- 3. Courses -->
+            <div class="sec-card">
+                <div class="sec-header"><i class="fa-solid fa-laptop-code"></i> Free Courses & Certifications</div>
+                
+                <div class="item-box">
+                    <h4>Succeeding in Postgraduate Study</h4>
+                    <p>Free badged course by The Open University (UK) for academic preparation.</p>
+                    <a href="https://www.open.edu/openlearn/education-development/succeeding-postgraduate-study/content-section-overview" target="_blank" class="item-link">OpenLearn Free Course <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
-                <div class="item-card">
-                    <span class="item-tag tag-book">Year 1 & 2 Core</span>
-                    <div class="item-title">Better English Pronunciation (J.D. O'Connor)</div>
-                    <div class="item-desc">Essential phonetics and phonology core textbook for first and second year university English majors.</div>
-                    <a href="https://archive.org/details/betterenglishpro0000ocon" target="_blank" class="item-btn">Open Library Book <i class="fa-solid fa-file-pdf"></i></a>
-                </div>
-
-                <div class="item-card">
-                    <span class="item-tag tag-book">Year 1 & 2 Core</span>
-                    <div class="item-title">An Introduction to Language (Fromkin & Rodman)</div>
-                    <div class="item-desc">Foundational textbook covering morphology, syntax, semantics, and language acquisition.</div>
-                    <a href="https://archive.org/details/introductiontola0000from" target="_blank" class="item-btn">Open Library Book <i class="fa-solid fa-file-pdf"></i></a>
-                </div>
-
-                <div class="item-card">
-                    <span class="item-tag tag-book">Year 3 & 4 Advanced</span>
-                    <div class="item-title">The Study of Language (George Yule)</div>
-                    <div class="item-desc">Standard curriculum book for third and fourth-year advanced linguistics, pragmatics, and sociolinguistics.</div>
-                    <a href="https://archive.org/details/studyoflanguage0000yule" target="_blank" class="item-btn">Open Library Book <i class="fa-solid fa-file-pdf"></i></a>
-                </div>
-
-                <div class="item-card">
-                    <span class="item-tag tag-book">Year 3 & 4 Advanced</span>
-                    <div class="item-title">English Grammar for Today (Leech & Deuchar)</div>
-                    <div class="item-desc">Advanced syntactic analysis and structural grammar textbook for third and fourth year university courses.</div>
-                    <a href="https://archive.org/details/englishgrammarfo0000leec" target="_blank" class="item-btn">Open Library Book <i class="fa-solid fa-file-pdf"></i></a>
+                <div class="item-box">
+                    <h4>MIT Introduction to Linguistics</h4>
+                    <p>Full academic lectures and syllabus from Massachusetts Institute of Technology.</p>
+                    <a href="https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/" target="_blank" class="item-link">MIT Courseware <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- 4. COURSES & WEB TOOLS -->
-            <div class="section-box" id="courses">
-                <div class="section-header">
-                    <i class="fa-solid fa-laptop-code" style="color: var(--accent-purple);"></i> Free Courses & Web Tools
+            <!-- 4. Resources -->
+            <div class="sec-card">
+                <div class="sec-header"><i class="fa-solid fa-globe"></i> Essential Web Tools</div>
+                
+                <div class="item-box">
+                    <h4>Interactive IPA Chart</h4>
+                    <p>Audio-visual chart for all English consonants, vowels, and diphthongs.</p>
+                    <a href="https://www.ipachart.com/" target="_blank" class="item-link">Open Interactive Chart <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
-                <div class="item-card">
-                    <span class="item-tag tag-course">Open University UK</span>
-                    <div class="item-title">Succeeding in Postgraduate Study</div>
-                    <div class="item-desc">Free badged open course tailored for undergraduate students preparing for UK Master's degree applications.</div>
-                    <a href="https://www.open.edu/openlearn/education-development/succeeding-postgraduate-study/content-section-overview" target="_blank" class="item-btn">OpenLearn Free Course <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-
-                <div class="item-card">
-                    <span class="item-tag tag-course">MIT OpenCourseWare</span>
-                    <div class="item-title">Introduction to Linguistics (MIT)</div>
-                    <div class="item-desc">Complete lecture materials, syntax notes, and phonology readings from MIT.</div>
-                    <a href="https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/" target="_blank" class="item-btn">MIT Courseware <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-
-                <div class="item-card">
-                    <span class="item-tag tag-phon">Phonetics Tool</span>
-                    <div class="item-title">Interactive IPA Sound Chart</div>
-                    <div class="item-desc">Interactive chart for hearing standard pronunciations of English consonants, vowels, and diphthongs.</div>
-                    <a href="https://www.ipachart.com/" target="_blank" class="item-btn">Open Interactive IPA <i class="fa-solid fa-globe"></i></a>
-                </div>
-
-                <div class="item-card">
-                    <span class="item-tag tag-ling">Dictionary</span>
-                    <div class="item-title">Oxford Learner's Dictionaries</div>
-                    <div class="item-desc">Standard reference for British and American IPA transcriptions, stress marks, and collocations.</div>
-                    <a href="https://www.oxfordlearnersdictionaries.com/" target="_blank" class="item-btn">Oxford Dictionary <i class="fa-solid fa-globe"></i></a>
+                <div class="item-box">
+                    <h4>Oxford Learner's Dictionaries</h4>
+                    <p>Standard dictionary for IPA transcriptions and word origins.</p>
+                    <a href="https://www.oxfordlearnersdictionaries.com/" target="_blank" class="item-link">Visit Dictionary <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
-
         </div>
-
-        <footer>
-            <p>© 2026 Mohammed Hasan — All Rights Reserved | Academic English Portal</p>
-        </footer>
-
     </div>
 
 </body>
