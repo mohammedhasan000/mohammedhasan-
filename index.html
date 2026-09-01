@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Hasan | Elysian English Hub</title>
+    <title>Mohammed Hasan | English Academic Hub</title>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -42,6 +42,10 @@
             box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
         }
         .brand-name { font-size: 18px; font-weight: 700; color: var(--text-title); letter-spacing: 0.5px; }
+
+        nav { display: flex; gap: 20px; }
+        .nav-link { font-size: 13px; color: var(--text-muted); transition: 0.3s; display: flex; align-items: center; gap: 6px; }
+        .nav-link:hover { color: var(--accent-glow); }
 
         /* CONTAINER */
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
@@ -101,6 +105,7 @@
         }
 
         @media (max-width: 768px) {
+            nav { display: none; }
             .hero h1 { font-size: 28px; }
             .grid-layout { grid-template-columns: 1fr; }
         }
@@ -113,6 +118,12 @@
             <div class="brand-logo">MH</div>
             <div class="brand-name">Mohammed Hasan</div>
         </div>
+        <nav>
+            <a href="#articles" class="nav-link"><i class="fa-solid fa-book-open"></i> Articles</a>
+            <a href="#books" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Textbooks</a>
+            <a href="#courses" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Courses</a>
+            <a href="#links" class="nav-link"><i class="fa-solid fa-link"></i> Web Tools</a>
+        </nav>
     </header>
 
     <div class="container">
@@ -120,71 +131,120 @@
         <!-- HERO -->
         <section class="hero">
             <h1>Mohammed Hasan</h1>
-            <p>English Language, Literature & Linguistics Hub</p>
-            <p class="hero-desc">A complete reference space for academic literature, IPA phonetics, linguistics materials, undergraduate coursebooks, and postgraduate study tools.</p>
+            <p>English Language & Literature Academic Hub</p>
+            <p class="hero-desc">A complete curated reference library featuring essential Shakespearean literature analysis, IPA phonetics guides, pragmatics research, core 4-year undergraduate university textbooks, and free open courses.</p>
         </section>
 
         <div class="grid-layout">
 
-            <!-- 1. ARTICLES -->
+            <!-- 1. ACADEMIC ARTICLES -->
             <div class="section-box" id="articles">
                 <div class="section-header">
-                    <i class="fa-solid fa-newspaper" style="color: var(--accent-blue);"></i> Academic Articles
+                    <i class="fa-solid fa-newspaper" style="color: var(--accent-blue);"></i> Literature & Linguistics Readings
                 </div>
 
                 <div class="item-card">
                     <span class="item-tag tag-lit">Literature</span>
                     <div class="item-title">Shakespeare's Adaptation Techniques</div>
-                    <div class="item-desc">An analytical exploration of how Shakespeare reshaped classical sources into timeless drama.</div>
+                    <div class="item-desc">An analytical exploration of how William Shakespeare reshaped classical sources, historical chronicles, and Italian novellas into timeless drama.</div>
                     <a href="https://www.bl.uk/shakespeare" target="_blank" class="item-btn">Read on British Library <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
                 <div class="item-card">
-                    <span class="item-tag tag-phon">Phonetics</span>
-                    <div class="item-title">IPA Vowels & RP Pronunciation</div>
-                    <div class="item-desc">Guide on International Phonetic Alphabet transcriptions, sound articulation, and stress placement.</div>
+                    <span class="item-tag tag-phon">Phonetics & Phonology</span>
+                    <div class="item-title">Understanding English Vowels & IPA Standard</div>
+                    <div class="item-desc">A deep dive into International Phonetic Alphabet (IPA) transcriptions, sound articulation, stress placement, and Received Pronunciation (RP).</div>
                     <a href="https://www.phonetics.ucla.edu/" target="_blank" class="item-btn">Explore UCLA Phonetics <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-ling">Linguistics</span>
+                    <div class="item-title">Pragmatics vs. Semantics: Contextual Meaning</div>
+                    <div class="item-desc">A comparative reading on literal semantics vs. pragmatic utterance context, speech act theory (Austin & Searle), and Gricean Maxims.</div>
+                    <a href="https://plato.stanford.edu/entries/pragmatics/" target="_blank" class="item-btn">Read Stanford Entry <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
             </div>
 
-            <!-- 2. UNIVERSITY BOOKS -->
+            <!-- 2. UNIVERSITY CURRICULUM BOOKS -->
             <div class="section-box" id="books">
                 <div class="section-header">
-                    <i class="fa-solid fa-graduation-cap" style="color: var(--accent-amber);"></i> Core Textbooks
+                    <i class="fa-solid fa-graduation-cap" style="color: var(--accent-amber);"></i> 4-Year University Textbooks
                 </div>
 
                 <div class="item-card">
-                    <span class="item-tag tag-book">Phonetics Core</span>
+                    <span class="item-tag tag-book">Years 1 & 2 Core</span>
                     <div class="item-title">Better English Pronunciation (J.D. O'Connor)</div>
-                    <div class="item-desc">Essential textbook for undergraduate phonetics and phonology modules.</div>
-                    <a href="https://archive.org/details/betterenglishpro0000ocon" target="_blank" class="item-btn">Open Library Book <i class="fa-solid fa-file-pdf"></i></a>
+                    <div class="item-desc">The essential foundational textbook for first-year and second-year phonetics and phonology studies in university English departments.</div>
+                    <a href="https://archive.org/details/betterenglishpro0000ocon" target="_blank" class="item-btn">Access Open Library <i class="fa-solid fa-file-pdf"></i></a>
                 </div>
 
                 <div class="item-card">
-                    <span class="item-tag tag-book">Linguistics Core</span>
+                    <span class="item-tag tag-book">Years 1 & 2 Core</span>
+                    <div class="item-title">An Introduction to Language (Fromkin et al.)</div>
+                    <div class="item-desc">Comprehensive introduction covering morphology, syntax, phonology, and language acquisition for undergraduate English majors.</div>
+                    <a href="https://archive.org/details/introductiontola0000from" target="_blank" class="item-btn">Access Open Library <i class="fa-solid fa-file-pdf"></i></a>
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-book">Years 3 & 4 Advanced</span>
                     <div class="item-title">The Study of Language (George Yule)</div>
-                    <div class="item-desc">Standard textbook for advanced linguistics, pragmatics, and sociolinguistics.</div>
-                    <a href="https://archive.org/details/studyoflanguage0000yule" target="_blank" class="item-btn">Open Library Book <i class="fa-solid fa-file-pdf"></i></a>
+                    <div class="item-desc">Standard textbook for third and fourth-year advanced linguistics, discourse analysis, pragmatics, and sociolinguistics.</div>
+                    <a href="https://archive.org/details/studyoflanguage0000yule" target="_blank" class="item-btn">Access Open Library <i class="fa-solid fa-file-pdf"></i></a>
                 </div>
             </div>
 
-            <!-- 3. COURSES & TOOLS -->
+            <!-- 3. FREE OPEN COURSES -->
             <div class="section-box" id="courses">
                 <div class="section-header">
-                    <i class="fa-solid fa-laptop-code" style="color: var(--accent-purple);"></i> Courses & Resources
+                    <i class="fa-solid fa-laptop-code" style="color: var(--accent-purple);"></i> Free Academic Courses
                 </div>
 
                 <div class="item-card">
                     <span class="item-tag tag-course">Open University UK</span>
                     <div class="item-title">Succeeding in Postgraduate Study</div>
-                    <div class="item-desc">Free badged course designed for academic writing and postgraduate application preparation.</div>
-                    <a href="https://www.open.edu/openlearn/education-development/succeeding-postgraduate-study/content-section-overview" target="_blank" class="item-btn">OpenLearn Course <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="item-desc">Free badged open course by The Open University designed to train undergraduate students for UK Master's degree applications and research.</div>
+                    <a href="https://www.open.edu/openlearn/education-development/succeeding-postgraduate-study/content-section-overview" target="_blank" class="item-btn">Enroll Free on OpenLearn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-course">MIT OpenCourseWare</span>
+                    <div class="item-title">Introduction to Linguistics (MIT)</div>
+                    <div class="item-desc">Full lecture notes and reading materials from Massachusetts Institute of Technology covering syntax, semantics, and phonetics.</div>
+                    <a href="https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/" target="_blank" class="item-btn">Open MIT Courseware <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-course">Coursera / UPenn</span>
+                    <div class="item-title">English for Academic Purposes & Writing</div>
+                    <div class="item-desc">University of Pennsylvania course focusing on essay structure, academic research methods, and literature essay composition.</div>
+                    <a href="https://www.coursera.org/learn/academic-writing" target="_blank" class="item-btn">View Course Page <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <!-- 4. USEFUL WEB LINKS -->
+            <div class="section-box" id="links">
+                <div class="section-header">
+                    <i class="fa-solid fa-link" style="color: var(--accent-green);"></i> Essential Academic Tools
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-ling">Reference</span>
+                    <div class="item-title">Oxford Learner's Dictionaries & IPA</div>
+                    <div class="item-desc">The primary standard reference for British & American phonetic transcriptions, word origins, and academic collocation guides.</div>
+                    <a href="https://www.oxfordlearnersdictionaries.com/" target="_blank" class="item-btn">Visit Dictionary <i class="fa-solid fa-globe"></i></a>
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-lit">Research</span>
+                    <div class="item-title">JSTOR Academic Archive</div>
+                    <div class="item-desc">Digital library of academic journals, books, and primary sources for literary critique and linguistic analysis.</div>
+                    <a href="https://www.jstor.org/" target="_blank" class="item-btn">Visit JSTOR Archive <i class="fa-solid fa-globe"></i></a>
                 </div>
 
                 <div class="item-card">
                     <span class="item-tag tag-phon">Phonetics Tool</span>
-                    <div class="item-title">Interactive IPA Sound Chart</div>
-                    <div class="item-desc">Audio-visual chart for listening to all English consonant and vowel sounds.</div>
+                    <div class="item-title">Interactive IPA Chart (Sounds of Speech)</div>
+                    <div class="item-desc">Interactive tool for listening to all English consonants, vowels, and diphthongs with real-time articulation animation.</div>
                     <a href="https://www.ipachart.com/" target="_blank" class="item-btn">Open Interactive IPA <i class="fa-solid fa-globe"></i></a>
                 </div>
             </div>
@@ -192,7 +252,7 @@
         </div>
 
         <footer>
-            <p>© 2026 Mohammed Hasan — All Rights Reserved | Academic English Portal</p>
+            <p>© 2026 Mohammed Hasan — English Academic Portal | Built for English Language & Literature Studies</p>
         </footer>
 
     </div>
