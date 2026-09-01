@@ -4,33 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammed Hasan</title>
+    <!-- Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
-        body { font-family: system-ui, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: auto; }
-        header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; padding-bottom: 15px; margin-bottom: 30px; }
-        h1 { font-size: 24px; margin: 0; }
-        .admin-link { background: #2563eb; color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 14px; }
-        .card { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
-        .card h2 { margin-top: 0; color: #60a5fa; font-size: 20px; }
-        .meta { font-size: 12px; color: #94a3b8; margin-bottom: 10px; }
-        .loading { text-align: center; color: #94a3b8; padding: 40px; }
+        :root {
+            --bg: #0b0f19;
+            --card-bg: #151d30;
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #2563eb;
+            --accent-hover: #3b82f6;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); min-height: 100vh; padding-bottom: 40px; }
+        a { text-decoration: none; color: inherit; }
+
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 18px 8%; background: rgba(11, 15, 25, 0.95);
+            border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
+        }
+        .brand { font-size: 20px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 10px; }
+        .brand-icon { width: 38px; height: 38px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 15px; }
+
+        .btn-admin {
+            background: var(--accent); color: #fff; padding: 8px 18px;
+            border-radius: 20px; font-size: 13px; font-weight: 600; transition: 0.2s;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .btn-admin:hover { background: var(--accent-hover); }
+
+        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+
+        .hero {
+            background: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px 20px; text-align: center; margin-bottom: 30px;
+        }
+        .hero h1 { font-size: 32px; margin-bottom: 8px; color: #fff; }
+        .hero p { color: var(--accent-hover); font-size: 16px; font-weight: 600; }
+
+        .grid-sections { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .sec-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+        .sec-header { font-size: 16px; font-weight: 700; color: var(--accent-hover); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+
+        .item-box { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+        .item-box h4 { font-size: 14px; color: #fff; margin-bottom: 4px; }
+        .item-box p { font-size: 12px; color: var(--text-sub); }
+        .item-link { display: inline-block; font-size: 11px; color: var(--accent-hover); font-weight: 600; margin-top: 6px; }
+
+        .status { font-size: 12px; color: var(--text-sub); text-align: center; padding: 15px 0; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Mohammed Hasan</h1>
-            <a href="/admin/" class="admin-link">لوحة التحكم</a>
-        </header>
 
-        <div id="content">
-            <div class="loading">جاري تحميل المحتوى والمقالات...</div>
+    <header>
+        <div class="brand">
+            <div class="brand-icon">MH</div>
+            <span>Mohammed Hasan</span>
+        </div>
+        <a href="/admin/" class="btn-admin"><i class="fa-solid fa-gear"></i> لوحة التحكم</a>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Mohammed Hasan</h1>
+            <p>تعلم • استكشف • طور</p>
+        </section>
+
+        <div class="grid-sections">
+            <div class="sec-card">
+                <div class="sec-header"><i class="fa-solid fa-file-lines"></i> المقالات</div>
+                <div id="articles-box"><div class="status">جاهز للاستقبال</div></div>
+            </div>
+
+            <div class="sec-card">
+                <div class="sec-header"><i class="fa-solid fa-flask"></i> البحوث</div>
+                <div id="research-box"><div class="status">جاهز للاستقبال</div></div>
+            </div>
+
+            <div class="sec-card">
+                <div class="sec-header"><i class="fa-solid fa-folder"></i> المصادر</div>
+                <div id="resources-box"><div class="status">جاهز للاستقبال</div></div>
+            </div>
+
+            <div class="sec-card">
+                <div class="sec-header"><i class="fa-solid fa-graduation-cap"></i> الكورسات</div>
+                <div id="courses-box"><div class="status">جاهز للاستقبال</div></div>
+            </div>
+
+            <div class="sec-card">
+                <div class="sec-header"><i class="fa-solid fa-link"></i> الروابط</div>
+                <div id="links-box"><div class="status">جاهز للاستقبال</div></div>
+            </div>
         </div>
     </div>
 
     <script>
+        // Check identity for Netlify CMS / Decap
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
@@ -39,28 +114,51 @@
             });
         }
 
-        async function fetchPosts() {
-            const contentDiv = document.getElementById('content');
+        // Safe client loader
+        async function fetchContent(folder, elementId, renderFn) {
+            const el = document.getElementById(elementId);
             try {
-                // Fetching commits/files list directly using jsDelivr CDN to bypass API limits
-                const pathParts = window.location.pathname.split('/').filter(p => p);
-                const repo = pathParts.length > 0 ? pathParts[0] : '';
+                const repoPath = location.pathname.replace(/^\/|\/$/g, '');
+                const user = location.hostname.split('.')[0];
+                const repo = repoPath || `${user}.github.io`;
                 
-                // Fallback direct static display
-                contentDiv.innerHTML = `
-                    <div class="card">
-                        <h2>الموقع متصل بالمحرر بنجاح</h2>
-                        <div class="meta">الحالة: جاهز استقبال المقالات</div>
-                        <p>إذا قمت بإضافة مقال من لوحة التحكم <strong>/admin/</strong> ستظهر المقالات هنا تلقائياً.</p>
-                    </div>
-                `;
+                const res = await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${folder}`);
+                if (!res.ok) throw new Error();
+                
+                const files = await res.json();
+                const mdFiles = files.filter(f => f.name.endsWith('.md'));
+                
+                if(mdFiles.length === 0) {
+                    el.innerHTML = '<div class="status">لا توجد منشورات حالياً</div>';
+                    return;
+                }
+
+                el.innerHTML = '';
+                for (let file of mdFiles) {
+                    const rawRes = await fetch(file.download_url);
+                    const text = await rawRes.text();
+                    
+                    // Simple Metadata Extraction
+                    const titleMatch = text.match(/title(?:_ar)?:\s*["']?([^"'\n]+)["']?/);
+                    const descMatch = text.match(/(?:description|title_en):\s*["']?([^"'\n]+)["']?/);
+                    
+                    const title = titleMatch ? titleMatch[1] : 'منشور جديد';
+                    const desc = descMatch ? descMatch[1] : '';
+
+                    el.innerHTML += renderFn(title, desc, file.download_url);
+                }
             } catch (e) {
-                contentDiv.innerHTML = '<div class="loading">حدث خطأ أثناء تحميل المحتوى.</div>';
+                el.innerHTML = '<div class="status">لا تتوفر منشورات حالياً</div>';
             }
         }
 
-        fetchPosts();
+        window.addEventListener('DOMContentLoaded', () => {
+            fetchContent('content/articles', 'articles-box', (t, d) => `<div class="item-box"><h4>${t}</h4><p>${d}</p></div>`);
+            fetchContent('content/research', 'research-box', (t, d) => `<div class="item-box"><h4>${t}</h4><p>${d}</p></div>`);
+            fetchContent('content/resources', 'resources-box', (t, d) => `<div class="item-box"><h4>${t}</h4><p>${d}</p></div>`);
+            fetchContent('content/courses', 'courses-box', (t, d) => `<div class="item-box"><h4>${t}</h4><p>${d}</p></div>`);
+            fetchContent('content/links', 'links-box', (t, d) => `<div class="item-box"><h4>${t}</h4><p>${d}</p></div>`);
+        });
     </script>
 </body>
 </html>
-
