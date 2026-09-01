@@ -1,164 +1,262 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Hasan</title>
-    <!-- Netlify Identity -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <!-- Icons -->
+    <title>English Studies & Linguistics Academic Hub</title>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <style>
         :root {
-            --bg: #0b0f19;
-            --card-bg: #151d30;
-            --border: rgba(255, 255, 255, 0.08);
-            --accent: #2563eb;
-            --accent-hover: #3b82f6;
-            --text-main: #f8fafc;
-            --text-sub: #94a3b8;
+            --bg-main: #0a0f1d;
+            --bg-card: rgba(19, 29, 51, 0.85);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --accent-blue: #3b82f6;
+            --accent-glow: #60a5fa;
+            --accent-green: #10b981;
+            --accent-purple: #8b5cf6;
+            --accent-amber: #f59e0b;
+            --text-title: #ffffff;
+            --text-body: #cbd5e1;
+            --text-muted: #94a3b8;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-        body { background-color: var(--bg); color: var(--text-main); min-height: 100vh; padding-bottom: 40px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg-main); color: var(--text-body); line-height: 1.6; padding-bottom: 60px; }
         a { text-decoration: none; color: inherit; }
 
+        /* HEADER */
         header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 18px 8%; background: rgba(11, 15, 25, 0.95);
-            border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
+            padding: 18px 6%; background: rgba(10, 15, 29, 0.95);
+            border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;
+            backdrop-filter: blur(10px);
         }
-        .brand { font-size: 20px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 10px; }
-        .brand-icon { width: 38px; height: 38px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 15px; }
-
-        .btn-admin {
-            background: var(--accent); color: #fff; padding: 8px 18px;
-            border-radius: 20px; font-size: 13px; font-weight: 600; transition: 0.2s;
-            display: flex; align-items: center; gap: 6px;
+        .brand { display: flex; align-items: center; gap: 12px; }
+        .brand-logo {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 16px; color: #fff;
+            box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
         }
-        .btn-admin:hover { background: var(--accent-hover); }
+        .brand-name { font-size: 18px; font-weight: 700; color: var(--text-title); letter-spacing: 0.5px; }
 
-        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        nav { display: flex; gap: 20px; }
+        .nav-link { font-size: 13px; color: var(--text-muted); transition: 0.3s; display: flex; align-items: center; gap: 6px; }
+        .nav-link:hover { color: var(--accent-glow); }
 
+        /* CONTAINER */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+        /* HERO SECTION */
         .hero {
-            background: var(--card-bg); border: 1px solid var(--border);
-            border-radius: 16px; padding: 40px 20px; text-align: center; margin-bottom: 30px;
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 20px; padding: 50px 30px; text-align: center; margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .hero h1 { font-size: 32px; margin-bottom: 8px; color: #fff; }
-        .hero p { color: var(--accent-hover); font-size: 16px; font-weight: 600; }
+        .hero h1 { font-size: 38px; color: var(--text-title); margin-bottom: 12px; }
+        .hero p { font-size: 18px; color: var(--accent-glow); font-weight: 600; margin-bottom: 15px; }
+        .hero-desc { max-width: 750px; margin: 0 auto; color: var(--text-muted); font-size: 14px; }
 
-        .grid-sections { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .sec-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
-        .sec-header { font-size: 16px; font-weight: 700; color: var(--accent-hover); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+        /* SECTIONS GRID */
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
 
-        .item-box { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-bottom: 10px; }
-        .item-box h4 { font-size: 14px; color: #fff; margin-bottom: 4px; }
-        .item-box p { font-size: 12px; color: var(--text-sub); }
-        .item-link { display: inline-block; font-size: 11px; color: var(--accent-hover); font-weight: 600; margin-top: 6px; }
+        .section-box {
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 16px; padding: 25px; backdrop-filter: blur(8px);
+        }
 
-        .status { font-size: 12px; color: var(--text-sub); text-align: center; padding: 15px 0; }
+        .section-header {
+            font-size: 18px; font-weight: 700; color: var(--text-title);
+            padding-bottom: 12px; margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex; align-items: center; gap: 10px;
+        }
+
+        /* CARD ITEM */
+        .item-card {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 16px; margin-bottom: 15px; transition: 0.3s ease;
+        }
+        .item-card:hover { border-color: rgba(59, 130, 246, 0.5); transform: translateY(-2px); }
+
+        .item-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; }
+        .tag-lit { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+        .tag-ling { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+        .tag-phon { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+        .tag-course { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
+        .tag-book { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+
+        .item-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+        .item-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
+
+        .item-btn {
+            font-size: 12px; font-weight: 600; color: var(--accent-glow);
+            display: inline-flex; align-items: center; gap: 6px; transition: 0.2s;
+        }
+        .item-btn:hover { text-decoration: underline; gap: 8px; }
+
+        /* FOOTER */
+        footer {
+            margin-top: 60px; text-align: center; color: var(--text-muted);
+            font-size: 13px; padding-top: 20px; border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero h1 { font-size: 28px; }
+            .grid-layout { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="brand">
-            <div class="brand-icon">MH</div>
-            <span>Mohammed Hasan</span>
+            <div class="brand-logo">MH</div>
+            <div class="brand-name">English Academic Portal</div>
         </div>
-        <a href="/admin/" class="btn-admin"><i class="fa-solid fa-gear"></i> لوحة التحكم</a>
+        <nav>
+            <a href="#articles" class="nav-link"><i class="fa-solid fa-book-open"></i> Articles</a>
+            <a href="#books" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> University Books</a>
+            <a href="#courses" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Courses</a>
+            <a href="#links" class="nav-link"><i class="fa-solid fa-link"></i> Web Resources</a>
+        </nav>
     </header>
 
     <div class="container">
+
+        <!-- HERO -->
         <section class="hero">
-            <h1>Mohammed Hasan</h1>
-            <p>تعلم • استكشف • طور</p>
+            <h1>English Language & Linguistics Hub</h1>
+            <p>Comprehensive Academic Resources for University Students</p>
+            <p class="hero-desc">A curated reference library featuring essential literature analysis, phonetics guides, linguistics research, undergraduate university textbooks, and free open courses.</p>
         </section>
 
-        <div class="grid-sections">
-            <div class="sec-card">
-                <div class="sec-header"><i class="fa-solid fa-file-lines"></i> المقالات</div>
-                <div id="articles-box"><div class="status">جاهز للاستقبال</div></div>
+        <div class="grid-layout">
+
+            <!-- 1. ACADEMIC ARTICLES -->
+            <div class="section-box" id="articles">
+                <div class="section-header">
+                    <i class="fa-solid fa-newspaper" style="color: var(--accent-blue);"></i> Literature & Linguistics Readings
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-lit">Literature</span>
+                    <div class="item-title">Shakespeare's Adaptation Techniques</div>
+                    <div class="item-desc">An analytical exploration of how William Shakespeare reshaped classical sources, historical chronicles, and Italian novellas into timeless drama.</div>
+                    <a href="https://www.bl.uk/shakespeare" target="_blank" class="item-btn">Read on British Library <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-phon">Phonetics & Phonology</span>
+                    <div class="item-title">Understanding English Vowels & IPA Standard</div>
+                    <div class="item-desc">A deep dive into International Phonetic Alphabet (IPA) transcriptions, sound articulation, stress placement, and intonation patterns in RP English.</div>
+                    <a href="https://www.phonetics.ucla.edu/" target="_blank" class="item-btn">Explore UCLA Phonetics <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-ling">Linguistics</span>
+                    <div class="item-title">Pragmatics vs. Semantics: Contextual Meaning</div>
+                    <div class="item-desc">A comparative reading on literal semantics vs. pragmatic utterance context, speech act theory (Austin & Searle), and Gricean Maxims.</div>
+                    <a href="https://plato.stanford.edu/entries/pragmatics/" target="_blank" class="item-btn">Read Stanford Entry <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
             </div>
 
-            <div class="sec-card">
-                <div class="sec-header"><i class="fa-solid fa-flask"></i> البحوث</div>
-                <div id="research-box"><div class="status">جاهز للاستقبال</div></div>
+            <!-- 2. UNIVERSITY CURRICULUM BOOKS -->
+            <div class="section-box" id="books">
+                <div class="section-header">
+                    <i class="fa-solid fa-graduation-cap" style="color: var(--accent-amber);"></i> Four-Year University Books
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-book">Years 1 & 2 Core</span>
+                    <div class="item-title">Better English Pronunciation (J.D. O'Connor)</div>
+                    <div class="item-desc">The essential foundational textbook for first-year and second-year phonetics and phonology studies in Iraqi and international English departments.</div>
+                    <a href="https://archive.org/details/betterenglishpro0000ocon" target="_blank" class="item-btn">Access Open Library <i class="fa-solid fa-file-pdf"></i></a>
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-book">Years 1 & 2 Core</span>
+                    <div class="item-title">An Introduction to Language (Fromkin et al.)</div>
+                    <div class="item-desc">Comprehensive introduction covering morphology, syntax, phonology, and language acquisition for undergraduate English majors.</div>
+                    <a href="https://archive.org/details/introductiontola0000from" target="_blank" class="item-btn">Access Open Library <i class="fa-solid fa-file-pdf"></i></a>
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-book">Years 3 & 4 Advanced</span>
+                    <div class="item-title">The Study of Language (George Yule)</div>
+                    <div class="item-desc">Standard textbook for third and fourth-year advanced linguistics, discourse analysis, pragmatics, and sociolinguistics.</div>
+                    <a href="https://archive.org/details/studyoflanguage0000yule" target="_blank" class="item-btn">Access Open Library <i class="fa-solid fa-file-pdf"></i></a>
+                </div>
             </div>
 
-            <div class="sec-card">
-                <div class="sec-header"><i class="fa-solid fa-folder"></i> المصادر</div>
-                <div id="resources-box"><div class="status">جاهز للاستقبال</div></div>
+            <!-- 3. FREE OPEN COURSES -->
+            <div class="section-box" id="courses">
+                <div class="section-header">
+                    <i class="fa-solid fa-laptop-code" style="color: var(--accent-purple);"></i> Free Academic Courses
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-course">Open University UK</span>
+                    <div class="item-title">Succeeding in Postgraduate Study</div>
+                    <div class="item-desc">Free badged open course by The Open University designed to train undergraduate students for UK Master's degree applications and research.</div>
+                    <a href="https://www.open.edu/openlearn/education-development/succeeding-postgraduate-study/content-section-overview" target="_blank" class="item-btn">Enroll Free on OpenLearn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-course">MIT OpenCourseWare</span>
+                    <div class="item-title">Introduction to Linguistics (MIT)</div>
+                    <div class="item-desc">Full lecture notes and reading materials from Massachusetts Institute of Technology covering syntax, semantics, and phonetics.</div>
+                    <a href="https://ocw.mit.edu/courses/24-900-introduction-to-linguistics-spring-2022/" target="_blank" class="item-btn">Open MIT Courseware <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-course">Coursera / Upenn</span>
+                    <div class="item-title">English for Academic Purposes & Writing</div>
+                    <div class="item-desc">University of Pennsylvania course focusing on essay structure, academic research methods, and literature essay composition.</div>
+                    <a href="https://www.coursera.org/learn/academic-writing" target="_blank" class="item-btn">View Course Page <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
             </div>
 
-            <div class="sec-card">
-                <div class="sec-header"><i class="fa-solid fa-graduation-cap"></i> الكورسات</div>
-                <div id="courses-box"><div class="status">جاهز للاستقبال</div></div>
+            <!-- 4. USEFUL WEB LINKS -->
+            <div class="section-box" id="links">
+                <div class="section-header">
+                    <i class="fa-solid fa-link" style="color: var(--accent-green);"></i> Essential English Websites
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-ling">Reference</span>
+                    <div class="item-title">Oxford Learner's Dictionaries & IPA</div>
+                    <div class="item-desc">The primary standard reference for British & American phonetic transcriptions, word origins, and academic collocation guides.</div>
+                    <a href="https://www.oxfordlearnersdictionaries.com/" target="_blank" class="item-btn">Visit Dictionary <i class="fa-solid fa-globe"></i></a>
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-lit">Research</span>
+                    <div class="item-title">JSTOR Academic Archive</div>
+                    <div class="item-desc">Digital library of academic journals, books, and primary sources for literary critique and linguistic analysis.</div>
+                    <a href="https://www.jstor.org/" target="_blank" class="item-btn">Visit JSTOR Archive <i class="fa-solid fa-globe"></i></a>
+                </div>
+
+                <div class="item-card">
+                    <span class="item-tag tag-phon">Phonetics Tool</span>
+                    <div class="item-title">Interactive IPA Chart (Sounds of Speech)</div>
+                    <div class="item-desc">Interactive tool for listening to all English consonants, vowels, and diphthongs with real-time articulation animation.</div>
+                    <a href="https://www.ipachart.com/" target="_blank" class="item-btn">Open Interactive IPA <i class="fa-solid fa-globe"></i></a>
+                </div>
             </div>
 
-            <div class="sec-card">
-                <div class="sec-header"><i class="fa-solid fa-link"></i> الروابط</div>
-                <div id="links-box"><div class="status">جاهز للاستقبال</div></div>
-            </div>
         </div>
+
+        <footer>
+            <p>© 2026 Mohammed Hasan — Academic English Portal | Built for English Language & Literature Students</p>
+        </footer>
+
     </div>
 
-    <script>
-        // Check identity for Netlify CMS / Decap
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
-                }
-            });
-        }
-
-        // Safe client loader
-        async function fetchContent(folder, elementId, renderFn) {
-            const el = document.getElementById(elementId);
-            try {
-                const repoPath = location.pathname.replace(/^\/|\/$/g, '');
-                const user = location.hostname.split('.')[0];
-                const repo = repoPath || `${user}.github.io`;
-                
-                const res = await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${folder}`);
-                if (!res.ok) throw new Error();
-                
-                const files = await res.json();
-                const mdFiles = files.filter(f => f.name.endsWith('.md'));
-                
-                if(mdFiles.length === 0) {
-                    el.innerHTML = '<div class="status">لا توجد منشورات حالياً</div>';
-                    return;
-                }
-
-                el.innerHTML = '';
-                for (let file of mdFiles) {
-                    const rawRes = await fetch(file.download_url);
-                    const text = await rawRes.text();
-                    
-                    // Simple Metadata Extraction
-                    const titleMatch = text.match(/title(?:_ar)?:\s*["']?([^"'\n]+)["']?/);
-                    const descMatch = text.match(/(?:description|title_en):\s*["']?([^"'\n]+)["']?/);
-                    
-                    const title = titleMatch ? titleMatch[1] : 'منشور جديد';
-                    const desc = descMatch ? descMatch[1] : '';
-
-                    el.innerHTML += renderFn(title, desc, file.download_url);
-                }
-            } catch (e) {
-                el.innerHTML = '<div class="status">لا تتوفر منشورات حالياً</div>';
-            }
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            fetchContent('content/articles', 'articles-box', (t, d) => `<div class="item-box"><h4>${t}</h4><p>${d}</p></div>`);
-            fetchContent('content/research', 'research-box', (t, d) => `<div class="item-box"><h4>${t}</h4><p>${d}</p></div>`);
-            fetchContent('content/resources', 'resources-box', (t, d) => `<div class="item-box"><h4>${t}</h4><p>${d}</p></div>`);
-            fetchContent('content/courses', 'courses-box', (t, d) => `<div class="item-box"><h4>${t}</h4><p>${d}</p></div>`);
-            fetchContent('content/links', 'links-box', (t, d) => `<div class="item-box"><h4>${t}</h4><p>${d}</p></div>`);
-        });
-    </script>
 </body>
 </html>
+
